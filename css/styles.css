@@ -15,6 +15,13 @@ body::after {
   height: 50px;
 }
 
+header nav {
+  background-color: #24305E;
+}
+header nav ul.navbar-nav {
+  text-align: center;
+}
+
 footer {
   position: absolute;
   bottom: 0;

@@ -17,6 +17,19 @@ body::after {
     height: 50px;
 }
 
+// Header styling
+header {
+    nav {
+        background-color: #24305E;
+        
+        ul {
+            &.navbar-nav {
+                text-align: center;
+            }
+        }
+    }
+}
+
 // Footer styling
 
 footer {
