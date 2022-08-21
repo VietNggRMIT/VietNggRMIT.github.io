@@ -18,7 +18,21 @@ body::after {
 header nav {
   background-color: #24305E;
 }
-header nav ul.navbar-nav {
+header nav .navbar-collapse {
+  transition: all 0.3s ease-in-out;
+}
+header nav .navbar-collapse.collapse {
+  display: block;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+header nav .navbar-collapse.active {
+  opacity: 1;
+  width: auto;
+  height: 250px;
+}
+header nav .navbar-collapse ul.navbar-nav {
   text-align: center;
 }
 

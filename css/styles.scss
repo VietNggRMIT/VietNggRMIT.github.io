@@ -21,10 +21,27 @@ body::after {
 header {
     nav {
         background-color: #24305E;
-        
-        ul {
-            &.navbar-nav {
-                text-align: center;
+
+        .navbar-collapse {
+            transition: all 0.3s ease-in-out;
+
+            &.collapse {
+                display: block;
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            &.active {
+                opacity: 1;
+                width: auto;
+                height: 250px;
+            }
+
+            ul {
+                &.navbar-nav {
+                    text-align: center;
+                }
             }
         }
     }
