@@ -19,6 +19,32 @@ header nav {
   background-color: #24305E;
 }
 
+main .main-wrapper {
+  max-width: 80vw;
+  margin: 0 auto;
+}
+main .main-wrapper .text-content {
+  margin: 30px 0 30px 0;
+}
+main .main-wrapper .signup-block-wrapper {
+  width: 700px;
+  margin: 0 auto;
+}
+main .main-wrapper .signup-block-wrapper .signup-block {
+  text-align: center;
+  background-color: #A8D0E6;
+}
+main .main-wrapper .signup-block-wrapper .signup-block form .form-row.upload {
+  display: flex;
+  justify-content: center;
+}
+main .main-wrapper .signup-block-wrapper .signup-block form .form-row.upload .img-preview img {
+  height: 150px;
+}
+main .main-wrapper .signup-block-wrapper .signup-block form .form-row.upload .upload-options .btn {
+  display: block;
+}
+
 footer {
   position: absolute;
   bottom: 0;
