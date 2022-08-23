@@ -50,12 +50,28 @@ main .main-wrapper .signup-block-wrapper .signup-block form .form-row .form-fiel
   width: 80%;
   margin: 0 auto;
 }
+main .main-wrapper .signup-block-wrapper .signup-block form .form-row .btn-form {
+  background-color: #4258ad;
+  color: #FFF;
+}
+main .main-wrapper .signup-block-wrapper .signup-block form .form-row .btn-form:hover {
+  background-color: #374785;
+}
 main .main-wrapper .signup-block-wrapper .signup-block form .form-row.upload {
   justify-content: center;
   align-items: center;
+  margin-bottom: 15px;
 }
 main .main-wrapper .signup-block-wrapper .signup-block form .form-row.upload .img-preview img {
   height: 150px;
+  margin: 20px 0 25px 0;
+}
+main .main-wrapper .signup-block-wrapper .signup-block form .form-row.upload .upload-options {
+  display: flex;
+  justify-content: space-evenly;
+}
+main .main-wrapper .signup-block-wrapper .signup-block form .form-row.upload .upload-options .pic-upload {
+  width: 70%;
 }
 footer {
   position: absolute;
