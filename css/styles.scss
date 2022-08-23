@@ -35,18 +35,41 @@ main {
         }
 
         .signup-block-wrapper {
-            width: 700px;
-            margin: 0 auto;
+            width: 600px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
 
             .signup-block {
                 text-align: center;
                 background-color: #A8D0E6;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+
+                .form-title {
+                    h1 {
+                        margin-bottom: 30px;
+                    }
+                }
 
                 form {
                     .form-row {
+                        margin-bottom: 15px;
+
+                        .form-field {
+                            .form-control {
+                                width: 80%;
+                                margin: 0 auto;
+                            }
+                        }
+
                         &.upload {
-                            display: flex;
+                            // display: flex;
                             justify-content: center;
+                            align-items: center;
+                            
 
                             .img-preview {
                                 img {
@@ -56,7 +79,7 @@ main {
 
                             .upload-options {
                                 .btn {
-                                    display: block;
+                                    
                                 }
                             }
                         }

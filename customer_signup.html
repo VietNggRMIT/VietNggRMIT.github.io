@@ -47,27 +47,27 @@
             <div class="main-wrapper">
                 <div class="signup-block-wrapper">
                     <div class="signup-block customer">
-                        <div class="form-title"><h1>Customer Sign Up</h1></div>
+                        <div class="form-title"><h1>Customer sign up</h1></div>
 
                         <form>
                             <div class="form-row">
                                 <div class="form-field">
-                                    <input required type="text" id="username" name="username" maxlength="255" placeholder="username">
+                                    <input class="form-control" required type="text" id="username" name="username" maxlength="255" placeholder="Username">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-field">
-                                    <input required type="password" id="password" name="password" maxlength="255" placeholder="password">
+                                    <input class="form-control" required type="password" id="password" name="password" maxlength="255" placeholder="Password">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-field">
-                                    <input required type="text" id="name" name="name" maxlength="255" placeholder="name">
+                                    <input class="form-control" required type="text" id="name" name="name" maxlength="255" placeholder="Name">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-field">
-                                    <input required type="text" id="address" name="address" maxlength="255" placeholder="address">
+                                    <input class="form-control" required type="text" id="address" name="address" maxlength="255" placeholder="Address">
                                 </div>
                             </div>
                             <div class="form-row upload">
@@ -75,9 +75,15 @@
                                     <img class="img-file" src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg">
                                 </div>
                                 <div class="upload-options">
+                                    <input class="form-control picture" type="file" id="formFile">
                                     <button class="btn btn-primary upload">Upload</button>
-                                    <input class="input-file" type="file" id="formFile">
                                 </div>
+                            </div>
+                            <div class="form-row">
+                                <button class="btn btn-primary btn-lg">Sign up</button>
+                            </div>
+                            <div class="form-row">
+                                <p>By clicking "Sign up" you agree to the Terms and Privacy Policy</p>
                             </div>
                         </form>
 
