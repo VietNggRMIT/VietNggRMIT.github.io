@@ -6,7 +6,7 @@
         <script src="js/index.js" async></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
-        <title>Home Page</title>
+        <title>Shipper Sign Up</title>
     </head>
     <body>
         <header>
@@ -44,7 +44,72 @@
             </nav>
         </header>
         <main>
-            <div class="main-wrapper"></div>
+            <div class="main-wrapper">
+
+                <div class="signup-block-wrapper">
+                    <div class="signup-block shipper">
+                        <div class="form-title"><h1>Shipper sign up</h1></div>
+
+                        <form>
+                            <div class="form-flex">
+                                <div class="fields-section">
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <input class="form-control" required type="text" id="biz_username" name="username" maxlength="255" placeholder="Username">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <input class="form-control" required type="password" id="biz_password" name="password" maxlength="255" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <input class="form-control" required type="text" id="biz_name" name="name" maxlength="255" placeholder="Business name">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <input class="form-control" required type="text" id="biz_address" name="address" maxlength="255" placeholder="Business address">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-label">
+                                            <label for="d-hub">Select distribution hub: </label>
+                                        </div>
+                                        <div class="form-field">
+                                            <div class="dropdown">
+                                                <select class="btn dropdown-toggle" name="d-hub" id="d-hub">
+                                                    <option value="">Sample</option>
+                                                    <option value="">Sample</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="upload-section">
+                                    <div class="form-row upload">
+                                        <div class="img-preview">
+                                            <img class="img-file" src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg">
+                                        </div>
+                                        <div class="upload-options">
+                                            <input class="form-control pic-upload" type="file" id="formFile">
+                                            <button class="btn btn-primary btn-form">Upload</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button class="btn btn-lg btn-form">Sign up</button>
+                            </div>
+                            <div class="form-row">
+                                <p>By clicking "Sign up" you agree to the <a href="privacy.html">Terms and Privacy Policy</a></p>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
             <div class="footer-wrapper">

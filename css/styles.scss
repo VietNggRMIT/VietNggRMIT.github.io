@@ -35,7 +35,6 @@ main {
         }
 
         .signup-block-wrapper {
-            width: 600px;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -48,6 +47,36 @@ main {
                 border-radius: 15px;
                 box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
 
+                &.customer {
+                    width: 600px;
+                }
+
+                &.vendor, &.shipper {
+                    width: 750px;
+
+                    .form-flex {
+                            justify-content: center;
+                            margin-bottom: 25px;
+
+                        .fields-section {
+                            width: 50%;
+
+                            .form-row {
+                                .form-field {
+                                    .dropdown {
+                                        select {
+                                            background-color: #FFF;
+                                            width: 80%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+
                 .form-title {
                     h1 {
                         margin-bottom: 30px;
@@ -55,6 +84,10 @@ main {
                 }
 
                 form {
+                    .form-flex {
+                        display: flex;
+                    }
+
                     .form-row {
                         margin-bottom: 15px;
 
@@ -94,9 +127,6 @@ main {
                                     width: 70%;
                                 }
 
-                                .btn {
-                                    
-                                }
                             }
                         }
                     }
