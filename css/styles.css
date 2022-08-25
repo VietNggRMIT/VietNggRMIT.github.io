@@ -19,17 +19,13 @@ header nav {
   background-color: #24305E;
 }
 
-main .main-wrapper {
-  max-width: 80vw;
-  margin: 0 auto;
-}
-main .main-wrapper .text-content {
+main .container .text-content {
   margin: 30px 0 30px 0;
 }
-main .main-wrapper .signup-block-wrapper {
-  margin: 50px;
+main .container .signup-block-wrapper {
+  margin: 50px 0 50px 0;
 }
-main .main-wrapper .signup-block-wrapper .signup-block {
+main .container .signup-block-wrapper .signup-block {
   margin: 0 auto;
   text-align: center;
   background-color: #A8D0E6;
@@ -37,58 +33,74 @@ main .main-wrapper .signup-block-wrapper .signup-block {
   border-radius: 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-main .main-wrapper .signup-block-wrapper .signup-block.customer {
+main .container .signup-block-wrapper .signup-block.customer {
   width: 600px;
 }
-main .main-wrapper .signup-block-wrapper .signup-block.vendor, main .main-wrapper .signup-block-wrapper .signup-block.shipper {
+main .container .signup-block-wrapper .signup-block.vendor, main .container .signup-block-wrapper .signup-block.shipper {
   width: 750px;
 }
-main .main-wrapper .signup-block-wrapper .signup-block.vendor .form-flex, main .main-wrapper .signup-block-wrapper .signup-block.shipper .form-flex {
+main .container .signup-block-wrapper .signup-block.vendor .form-flex, main .container .signup-block-wrapper .signup-block.shipper .form-flex {
   justify-content: center;
   margin-bottom: 25px;
 }
-main .main-wrapper .signup-block-wrapper .signup-block.vendor .form-flex .fields-section, main .main-wrapper .signup-block-wrapper .signup-block.shipper .form-flex .fields-section {
+main .container .signup-block-wrapper .signup-block.vendor .form-flex .fields-section, main .container .signup-block-wrapper .signup-block.shipper .form-flex .fields-section {
   width: 50%;
 }
-main .main-wrapper .signup-block-wrapper .signup-block.vendor .form-flex .fields-section .form-row .form-field .dropdown select, main .main-wrapper .signup-block-wrapper .signup-block.shipper .form-flex .fields-section .form-row .form-field .dropdown select {
+main .container .signup-block-wrapper .signup-block.vendor .form-flex .fields-section .form-row .form-field .dropdown select, main .container .signup-block-wrapper .signup-block.shipper .form-flex .fields-section .form-row .form-field .dropdown select {
   background-color: #FFF;
   width: 80%;
 }
-main .main-wrapper .signup-block-wrapper .signup-block .form-title h1 {
+main .container .signup-block-wrapper .signup-block .form-title h1 {
   margin-bottom: 30px;
 }
-main .main-wrapper .signup-block-wrapper .signup-block form .form-flex {
+main .container .signup-block-wrapper .signup-block form .form-flex {
   display: flex;
 }
-main .main-wrapper .signup-block-wrapper .signup-block form .form-row {
+main .container .signup-block-wrapper .signup-block form .form-row {
   margin-bottom: 15px;
 }
-main .main-wrapper .signup-block-wrapper .signup-block form .form-row .form-field .form-control {
+main .container .signup-block-wrapper .signup-block form .form-row .form-field .form-control {
   width: 80%;
   margin: 0 auto;
 }
-main .main-wrapper .signup-block-wrapper .signup-block form .form-row .btn-form {
+main .container .signup-block-wrapper .signup-block form .form-row .btn-form {
   background-color: #4258ad;
   color: #FFF;
 }
-main .main-wrapper .signup-block-wrapper .signup-block form .form-row .btn-form:hover {
+main .container .signup-block-wrapper .signup-block form .form-row .btn-form:hover {
   background-color: #374785;
 }
-main .main-wrapper .signup-block-wrapper .signup-block form .form-row.upload {
+main .container .signup-block-wrapper .signup-block form .form-row.upload {
   justify-content: center;
   align-items: center;
   margin-bottom: 15px;
 }
-main .main-wrapper .signup-block-wrapper .signup-block form .form-row.upload .img-preview img {
+main .container .signup-block-wrapper .signup-block form .form-row.upload .img-preview img {
   height: 150px;
   margin: 20px 0 25px 0;
 }
-main .main-wrapper .signup-block-wrapper .signup-block form .form-row.upload .upload-options {
+main .container .signup-block-wrapper .signup-block form .form-row.upload .upload-options {
   display: flex;
   justify-content: space-evenly;
 }
-main .main-wrapper .signup-block-wrapper .signup-block form .form-row.upload .upload-options .pic-upload {
+main .container .signup-block-wrapper .signup-block form .form-row.upload .upload-options .pic-upload {
   width: 70%;
+}
+main .container .product-listing-wrapper {
+  margin: 50px 0 50px 0;
+}
+main .container .product-listing-wrapper .product-listing .listing-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+main .container .product-listing-wrapper .product-listing .listing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 30px;
+}
+main .container .product-listing-wrapper .product-listing .listing-grid .product.card {
+  max-width: 350px;
+  margin: 0 auto;
 }
 
 footer {
@@ -144,5 +156,23 @@ footer {
   }
   .navbar-collapse ul.navbar-nav {
     text-align: center;
+  }
+  main .container .product-listing-wrapper .product-listing .listing-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 20px;
+  }
+  main .container .product-listing-wrapper .product-listing .listing-grid .product.card {
+    max-width: 350px;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  main .container .product-listing-wrapper .product-listing .listing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 20px;
+  }
+  main .container .product-listing-wrapper .product-listing .listing-grid .product.card {
+    max-width: 350px;
   }
 }/*# sourceMappingURL=styles.css.map */
