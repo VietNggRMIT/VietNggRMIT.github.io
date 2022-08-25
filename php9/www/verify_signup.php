@@ -7,19 +7,19 @@ if (count($_POST) <= 0 ) {
 if (isset($_POST["signup"])){
     $userlist = file ('../accounts.db'); //read the file into an array of lines
     //get all the data from POST bc why not
-    $new_uname = trim($_POST["uname"]);
-    $new_utype = $_POST["utype"];
-    $new_pw = $_POST["psw"];
-    $new_fullname = $_POST["fullname"];
-    $new_wc = $_POST["wc"]; //wildcard: address for customers, business address for vendors, dist hub for shippers
-    $reg_success = FALSE;
+    $new_uname      = $_POST["uname"];
+    $new_utype      = $_POST["utype"];
+    $new_pw         = $_POST["psw"];
+    $new_fullname   = $_POST["fullname"];
+    //wildcard: address for customers, unique business address for vendors, dist hub for shippers
+    $new_wc         = $_POST["wc"]; 
+    $reg_success = TRUE;
     //go line by line to check existing usernames
-    if($new_utype == "vendor"){ //vendors cannot share business addresses
+    if($new_utype == "vendor"){ //vendors also cannot share business addresses
         foreach ($userlist as $user) { //$user: a line in the db file
             $user_details = explode('|', trim($user));
-            if($new_uname == $user[1] && $new_wc == $user[3]){ //also check if username already exists
-                echo "Username or business address already exists.\n";
-                echo "<a href=\"homepage.php\" name=\"reg\">Home </a>";
+            if($new_uname == $user_details[1] || ($new_wc == $user_details[3] && $user_details[0] == "vendor")){
+                $reg_success = false;
                 break;
             }
         }
@@ -27,14 +27,17 @@ if (isset($_POST["signup"])){
     else{ //only check username for customers and shippers
         foreach ($userlist as $user) {
             $user_details = explode('|', trim($user));
-            if($new_uname == $user[1]){ //username already exists
-                echo "Username already exists.\n";
-                echo "<a href=\"homepage.php\" name=\"reg\">Home </a>";
+            if($new_uname == $user_details[1]){ //username already exists
+                $reg_success = false;
                 break;
             }
         }
     }
-    $reg_success = TRUE;
+    if(!$reg_success){ 
+        $_SESSION['signup_failed'] = true;
+        header("Location: " . $_SESSION['tryagain']);
+        exit();
+    }
     //no dupes -> ok
     //handle profile images; force the user to do this again if they don't submit an image
     $target_dir = "pfp/";
@@ -43,7 +46,7 @@ if (isset($_POST["signup"])){
     if(!file_exists($_FILES['fileup']['tmp_name']) || !is_uploaded_file($_FILES['fileup']['tmp_name'])) {
         $_SESSION['user']['pfp'] = $def_pfp;
     }
-    else{
+    else{ //user uploaded some stuff
         $target_file = $target_dir . basename($_FILES["fileup"]["name"]);
         $uploaded = TRUE;
         $imageFileType = strtolower(pathinfo($target_file)['extension']);
@@ -53,7 +56,7 @@ if (isset($_POST["signup"])){
             $err_mes = "Sorry, your file is too large.";
             $uploaded = FALSE;
         }
-        // Only allow certain file formats. Doesnt check if the user omits pfp (use default)
+        // Only allow certain file formats
         $allowed = ['jpg', 'jpeg', 'png', 'gif'];
         if(!in_array($imageFileType, $allowed)) {
             $err_mes = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
@@ -75,7 +78,6 @@ if (isset($_POST["signup"])){
             }
         }
     }
-    
     if($reg_success){    
         $pw_file = fopen("../accounts.db", "a");
         $entry = sprintf("%s|%s|%s|%s|%s\n", $new_utype, $new_uname, $new_fullname, $new_wc, $new_pw);
@@ -85,5 +87,6 @@ if (isset($_POST["signup"])){
         $_SESSION['user']['fullname'] = $new_fullname;
         $_SESSION['user']["uname"] = $new_uname;
         header("Location: welcome.php");
+        unset($_SESSION['signup_failed']);
     }
 }

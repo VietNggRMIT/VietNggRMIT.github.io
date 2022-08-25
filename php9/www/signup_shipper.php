@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+    $_SESSION['tryagain'] = 'signup_shipper.php';
+    if(isset($_SESSION['signup_failed'])){
+      echo "<script type='text/javascript'>alert('Username is taken.');</script>";
+    }
+  ?>
 <form action="verify_signup.php" method="POST" enctype="multipart/form-data">
   <div class="container">
     <h1>Sign Up</h1>
