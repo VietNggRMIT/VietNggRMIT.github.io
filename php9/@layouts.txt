@@ -1,0 +1,32 @@
+www
+-- php + html files
+
+db
+--accounts.db	: log in info of ALL users
+	for customers: 	type|username*|c_fname|c_address
+	for vendors: 	type|username*|v_name|v_address*
+	for shippers:	type|username*|s_name|dist_hub
+
+--cart.db	: cart info (for customers)
+	username|item|vendor|quantity
+e.g.	vietanh|socks|jjj|20
+	v2|hat|nike|3
+	vietanh|hat|nike|1
+(easy to add to arrays, not very practical though)
+(click on 'Cart' -> loop through this file)
+
+--products.db	: products info (for all users, mainly customers
+				and vendors)
+	vendor|product|quantity
+e.g.	nike|hat|200
+
+--order.db	: orderid + items+ dist hub
+	ord1|['hat' => 1, 'socks' => 20]|hub1
+(can convert from string back to array)
+
+resources: img files
+--pfp/		: profile pictures of users
+	use username as file name
+--item/		: item picture
+	use vendor.item as file name (item/nike/hat.jpg, e.g.)
+	
