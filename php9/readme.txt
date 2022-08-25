@@ -1,2 +1,2 @@
-cd into the 'www' folder and run the php server
+go to 'www' and start php session
 on your browser: go to localhost:{port}/homepage.php
