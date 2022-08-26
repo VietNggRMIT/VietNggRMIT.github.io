@@ -45,52 +45,48 @@
         </header>
         <main>
             <div class="container">
-                <form>
-                    <div class="form-row">
-                        <div class="form-field">
-                            <input class="form-control" required type="text" id="prodName" name="prodName" maxlength="255" placeholder="Username">
-                        </div>
+                <div class="signup-block-wrapper">
+                    <div class="signup-block vendor">
+                        <div class="form-title"><h1>Add new product</h1></div>
+
+                        <form>
+                            <div class="form-flex">
+                                <div class="upload-section">
+                                    <div class="form-row upload">
+                                        <div class="img-preview">
+                                            <img class="img-file" src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg">
+                                        </div>
+                                        <div class="upload-options">
+                                            <input class="form-control pic-upload" type="file" id="formFile">
+                                            <button class="btn btn-primary btn-form">Upload</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fields-section">
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <input class="form-control" required type="text" id="prod_name" name="prod_name" minlength="10" maxlength="20" placeholder="Product name">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <input class="form-control" oninput="validity.valid || (value='');" onpress="isNum(event)" required type="number" id="prod_price" name="prod_price" min="0.01" step="0.01" placeholder="Product price">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <textarea class="form-control" required type="textarea" id="prod_description" name="prod_description" maxlength="500" rows="5" placeholder="Product description"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button class="btn btn-lg btn-form">Add product</button>
+                            </div>
+                        </form>
+
                     </div>
-                    <div class="form-row">
-                        <div class="form-field">
-                            <input class="form-control" required type="number" id="username" name="username" maxlength="255" placeholder="Username">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-field">
-                            <input class="form-control" required type="text" id="username" name="username" maxlength="255" placeholder="Username">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-label">
-                            <label>Available sizes: </label>
-                        </div>
-                        <div class="form-field">
-                            <ul>
-                                <li>
-                                    <input type="checkbox" id="size_xs" name="size[]" value="size_xs">
-                                    <lable for="contact_email">XS</lable>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="size_s" name="size[]" value="size_s">
-                                    <lable for="contact_phone">S</lable>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="size_m" name="size[]" value="size_m">
-                                    <lable for="contact_phone">M</lable>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="size_l" name="size[]" value="size_l">
-                                    <lable for="contact_phone">L</lable>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="size_xl" name="size[]" value="size_xl">
-                                    <lable for="contact_phone">XL</lable>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
         </main>
         <footer>

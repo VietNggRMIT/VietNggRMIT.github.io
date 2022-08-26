@@ -39,10 +39,6 @@ main .container .signup-block-wrapper .signup-block.customer {
 main .container .signup-block-wrapper .signup-block.vendor, main .container .signup-block-wrapper .signup-block.shipper {
   width: 750px;
 }
-main .container .signup-block-wrapper .signup-block.vendor .form-flex, main .container .signup-block-wrapper .signup-block.shipper .form-flex {
-  justify-content: center;
-  margin-bottom: 25px;
-}
 main .container .signup-block-wrapper .signup-block.vendor .form-flex .fields-section, main .container .signup-block-wrapper .signup-block.shipper .form-flex .fields-section {
   width: 50%;
 }
@@ -55,6 +51,8 @@ main .container .signup-block-wrapper .signup-block .form-title h1 {
 }
 main .container .signup-block-wrapper .signup-block form .form-flex {
   display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
 }
 main .container .signup-block-wrapper .signup-block form .form-row {
   margin-bottom: 15px;
