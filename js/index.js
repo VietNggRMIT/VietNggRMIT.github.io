@@ -37,6 +37,7 @@ function verifyPassword() {
         let temp = pass.charAt(i);
         if (lowerCase.includes(temp)) {
             found = true;
+            console.log(found);
             break;
         }
     }
