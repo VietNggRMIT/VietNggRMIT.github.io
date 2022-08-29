@@ -1,7 +1,5 @@
 -----type|username|c/v/sname|address/dist_hub|password----
-customer|aaa|A1 A2|123 S Street|aaapass
-shipper|abc|Anh Ngo|Ba Dinh Hub|aaa
-vendor|git|Git Enterprise|vendor|git
-customer|haha|haha|haha1|haha
-shipper|ship1|ship|456|ship
-shipper|hello|hello||HELL0!
+customer|aaaaa|A1 A2|123 S Street|CUS123!
+shipper|abcde|Anh Ngo|Ba Dinh Hub|SHIP123!
+vendor|github|Git Enterprise|vendor|VEN123!
+shipper|ship1|mr ship|hehe|SHIP123!
