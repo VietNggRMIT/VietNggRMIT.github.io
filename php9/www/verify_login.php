@@ -16,7 +16,7 @@ if (isset($_POST["login"])){
             $_SESSION['user']['uname'] = $userN;
             $_SESSION['user']['type'] = $user_details[0];
             $_SESSION['user']['fullname'] = $user_details[2];
-            $_SESSION['user']['address'] = $user_details[3];
+            $_SESSION['user']['wc'] = $user_details[3];
             $success = true;
             break;
         }

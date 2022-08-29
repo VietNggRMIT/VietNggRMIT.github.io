@@ -4,7 +4,7 @@
     if(isset($_SESSION['signup_failed'])){
       echo "<script type='text/javascript'>alert('Username or business address is not unique.');</script>";
     }
-  ?>
+?>
 <form action="verify_signup.php" method="POST" enctype="multipart/form-data">
   <div class="container">
     <h1>Sign Up</h1>
@@ -20,8 +20,7 @@
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required><br>
 
-    <input type="hidden" name="utype" value="vendor"
-    >
+    <input type="hidden" name="utype" value="vendor">
     <label for="address"><b>Business address</b></label>
     <input type="text" placeholder="Enter address" name="wc">
 
