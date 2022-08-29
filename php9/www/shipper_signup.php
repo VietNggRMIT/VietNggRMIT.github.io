@@ -97,7 +97,7 @@
                                             <img class="img-file" src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg">
                                         </div>
                                         <div class="upload-options">
-                                            <input class="form-control pic-upload" type="file" id="formFile">
+                                            <input class="form-control pic-upload" type="file" id="formFile" name="fileup">
                                         </div>
                                     </div>
                                 </div>
