@@ -18,6 +18,9 @@ body::after {
 header nav {
   background-color: #24305E;
 }
+header nav .container-fluid .navbar-brand .brand-logo {
+  height: 50px;
+}
 
 main .container .text-content {
   margin: 30px 0 30px 0;
@@ -129,8 +132,8 @@ main .container .account-info-wrapper .account-details-section .account-details 
   font-size: 24px;
   line-height: 200%;
 }
-main .container .account-info-wrapper .account-details-section.shipper {
-  text-align: center;
+main .container .account-info-wrapper .account-details-section.shipper .active-order-listing .listing-title {
+  font-size: 20px;
 }
 main .container .product-listing-wrapper {
   margin: 50px 0 50px 0;

@@ -21,6 +21,13 @@ body::after {
 header {
     nav {
         background-color: #24305E;
+        .container-fluid {
+            .navbar-brand {
+                .brand-logo {
+                    height: 50px;
+                }
+            }
+        }
     }
 }
 
@@ -192,7 +199,11 @@ main {
                 }
 
                 &.shipper {
-                    text-align: center;
+                    .active-order-listing {
+                        .listing-title {
+                            font-size: 20px;
+                        }
+                    }
                 }
             }
         }
