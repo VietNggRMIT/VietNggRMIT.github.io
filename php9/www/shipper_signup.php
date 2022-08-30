@@ -1,10 +1,3 @@
-<?php 
-    session_start();
-    $_SESSION['tryagain'] = 'shipper_signup.php';
-    if(isset($_SESSION['signup_failed'])){
-      echo "<script type='text/javascript'>alert('Username or business address is not unique.');</script>";
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -56,7 +49,13 @@
                 <div class="signup-block-wrapper">
                     <div class="signup-block shipper">
                         <div class="form-title"><h1>Shipper sign up</h1></div>
-
+                        <?php 
+                            session_start();
+                            $_SESSION['tryagain'] = 'shipper_signup.php';
+                            if(isset($_SESSION['signup_failed'])){
+                            echo "<script type='text/javascript'>alert('Username or business address is not unique.');</script>";
+                            }
+                        ?>
                         <form action="verify_signup.php" method="POST" enctype="multipart/form-data">
                             <div class="form-flex">
                                 <div class="fields-section">

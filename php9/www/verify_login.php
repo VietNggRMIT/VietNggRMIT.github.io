@@ -13,6 +13,7 @@ if (isset($_POST["login"])){
         $user_details = explode('|+|', trim($user)); //trim so that the new line doesnt get counted as pw
         //using plain text to test, make sure to use hash
         if ($user_details[1] == $userN && $user_details[4] == $passW) {
+            unset($_SESSION['login']);
             $_SESSION['user']['uname'] = $userN;
             $_SESSION['user']['type'] = $user_details[0];
             $_SESSION['user']['fullname'] = $user_details[2];
@@ -24,7 +25,7 @@ if (isset($_POST["login"])){
     if ($success) {
         header("Location: welcome.php");
     } else {
-        echo "<br> You have entered the wrong username or password. Please try again. <br>";
-        echo "<a href=\"homepage.php\" name=\"home\">Home </a>";
+        $_SESSION['login'] = false;
+        header("Location: login.php");
     }
 }

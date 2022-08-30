@@ -43,6 +43,10 @@ main {
                 border-radius: 15px;
                 box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
 
+                &.login {
+                    width: 650px;
+                }
+
                 &.customer {
                     width: 600px;
                 }
@@ -74,6 +78,10 @@ main {
                     h1 {
                         margin-bottom: 30px;
                     }
+
+                    h2 {
+                        margin-bottom: 20px;
+                    }
                 }
 
                 form {
@@ -85,6 +93,12 @@ main {
 
                     .form-row {
                         margin-bottom: 15px;
+
+                        .form-label {
+                            label {
+                                font-weight: bold;
+                            }
+                        }
 
                         .form-field {
                             .form-control {
@@ -99,6 +113,15 @@ main {
 
                             &:hover {
                                 background-color: #374785;
+                            }
+                        }
+
+                        &.signup-options {
+                            .divider {
+                                width: 80%;
+                                height: 20px;
+                                margin: 10px auto 20px auto;
+                                border-bottom: 1px solid #24305E;
                             }
                         }
 
@@ -233,6 +256,13 @@ footer {
 
     main {
         .container {
+            .signup-block-wrapper {
+                .signup-block {
+                    &.login, &.customer, &.vendor, &.shipper {
+                        width: 100%;
+                    }
+                }
+            }
 
             // Tablet product listing styling
             .product-listing-wrapper {
