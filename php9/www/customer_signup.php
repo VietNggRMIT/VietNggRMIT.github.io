@@ -1,9 +1,10 @@
 <?php 
     session_start();
-    $_SESSION['tryagain'] = 'customer_signup.php';
-    if(isset($_SESSION['signup_failed'])){
-      echo "<script type='text/javascript'>alert('Username or business address is not unique.');</script>";
+    $current = 'customer_signup.php';
+    if(isset($_SESSION['tryagain']) && $_SESSION['tryagain'] != $current){ //user tried to sign up in other pages
+        unset($_SESSION['signup_failed']);
     }
+    $_SESSION['tryagain'] = $current;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,6 +56,11 @@
                 <div class="signup-block-wrapper">
                     <div class="signup-block customer">
                         <div class="form-title"><h1>Customer sign up</h1></div>
+                        <?php
+                            if(isset($_SESSION['signup_failed'])){
+                                echo "<h2>Your username is taken.</h2>";
+                              }
+                        ?>
 
                         <form action="verify_signup.php" method="POST" enctype="multipart/form-data">
                             <div class="form-row">

@@ -1,3 +1,11 @@
+<?php 
+    session_start();
+    $current = 'shipper_signup.php';
+    if(isset($_SESSION['tryagain']) && $_SESSION['tryagain'] != $current){ //user tried to sign up in other pages
+        unset($_SESSION['signup_failed']);
+    }
+    $_SESSION['tryagain'] = $current;
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -50,10 +58,8 @@
                     <div class="signup-block shipper">
                         <div class="form-title"><h1>Shipper sign up</h1></div>
                         <?php 
-                            session_start();
-                            $_SESSION['tryagain'] = 'shipper_signup.php';
                             if(isset($_SESSION['signup_failed'])){
-                            echo "<script type='text/javascript'>alert('Username or business address is not unique.');</script>";
+                                echo "<h2>Your username is taken.</h2>";
                             }
                         ?>
                         <form action="verify_signup.php" method="POST" enctype="multipart/form-data">
@@ -83,8 +89,8 @@
                                             <div class="dropdown">
                                                 <!-- wc: wildcard - for shippers -> dist hub -->
                                                 <select class="btn dropdown-toggle" name="wc" id="d-hub">
-                                                    <option value="">Sample 1</option>
-                                                    <option value="">Sample 2</option>
+                                                    <option value="Sample 1">Sample 1</option>
+                                                    <option value="Sample 2">Sample 2</option>
                                                 </select>
                                             </div>
                                         </div>

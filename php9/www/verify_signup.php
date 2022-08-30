@@ -26,7 +26,7 @@ if (isset($_POST["signup"])){
     }
     else{ //only check username for customers and shippers
         foreach ($userlist as $user) {
-            $user_details = explode('|', trim($user));
+            $user_details = explode('|+|', trim($user));
             if($new_uname == $user_details[1]){ //username already exists
                 $reg_success = false;
                 break;
@@ -80,7 +80,7 @@ if (isset($_POST["signup"])){
     }
     if($reg_success){    
         $pw_file = fopen("../accounts.db", "a");
-        $entry = sprintf("%s|%s|%s|%s|%s\n", $new_utype, $new_uname, $new_fullname, $new_wc, $new_pw);
+        $entry = sprintf("%s|+|%s|+|%s|+|%s|+|%s\n", $new_utype, $new_uname, $new_fullname, $new_wc, $new_pw);
         fwrite($pw_file, $entry);
         fclose($pw_file);
         $_SESSION['user']['type'] = $new_utype;
