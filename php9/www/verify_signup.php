@@ -86,7 +86,7 @@ if (isset($_POST["signup"])){
         $_SESSION['user']['type'] = $new_utype;
         $_SESSION['user']['fullname'] = $new_fullname;
         $_SESSION['user']["uname"] = $new_uname;
-        header("Location: welcome.php");
         unset($_SESSION['signup_failed']);
+        header("Location: ". $_SESSION['user']['type'] . "_account.php");
     }
 }
