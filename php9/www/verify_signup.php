@@ -17,7 +17,7 @@ if (isset($_POST["signup"])){
     //go line by line to check existing usernames
     if($new_utype == "vendor"){ //vendors also cannot share business addresses
         foreach ($userlist as $user) { //$user: a line in the db file
-            $user_details = explode('|', trim($user));
+            $user_details = explode('|+|', trim($user));
             if($new_uname == $user_details[1] || ($new_wc == $user_details[3] && $user_details[0] == "vendor")){
                 $reg_success = false;
                 break;

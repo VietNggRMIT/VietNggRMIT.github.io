@@ -10,7 +10,7 @@ if (isset($_POST["login"])){
     $userlist = file ('../accounts.db');
     $success = false;
     foreach ($userlist as $user) { //user: a line in the db file
-        $user_details = explode('|', trim($user)); //trim so that the new line doesnt get counted as pw
+        $user_details = explode('|+|', trim($user)); //trim so that the new line doesnt get counted as pw
         //using plain text to test, make sure to use hash
         if ($user_details[1] == $userN && $user_details[4] == $passW) {
             $_SESSION['user']['uname'] = $userN;
