@@ -18,12 +18,28 @@ if (isset($_POST["login"])){
             $_SESSION['user']['type'] = $user_details[0];
             $_SESSION['user']['fullname'] = $user_details[2];
             $_SESSION['user']['wc'] = $user_details[3];
+            //get user pfp
+            $pfp_dir = "pfp/";
+            $scan = scandir($pfp_dir);
+            foreach($scan as $file) {
+                if ($file == "." || $file == "..") { }//do nothing - just to be safe
+                else{
+                    $file_uname = explode(".", $file)[0]; //username portion of img file
+                    if($_SESSION['user']['uname'] == $file_uname){
+                        $_SESSION['user']['pfp'] = $pfp_dir . $file;
+                    }
+                }
+            }
+            if(!isset($_SESSION['user']['pfp'])){
+                $_SESSION['user']['pfp'] = $pfp_dir . "default_pfp.jpg";
+            }
+            
             $success = true;
             break;
         }
     }
     if ($success) {
-        header("Location: welcome.php");
+        header("Location: ". $_SESSION['user']['type'] . "_account.php");
     } else {
         $_SESSION['login'] = false;
         header("Location: login.php");

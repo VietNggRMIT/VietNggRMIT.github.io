@@ -18,6 +18,9 @@ body::after {
 header nav {
   background-color: #24305E;
 }
+header nav .container-fluid .navbar-brand .brand-logo {
+  height: 50px;
+}
 
 main .container .text-content {
   margin: 30px 0 30px 0;
@@ -77,12 +80,6 @@ main .container .signup-block-wrapper .signup-block form .form-row .btn-form {
 main .container .signup-block-wrapper .signup-block form .form-row .btn-form:hover {
   background-color: #374785;
 }
-main .container .signup-block-wrapper .signup-block form .form-row.signup-options .divider {
-  width: 80%;
-  height: 20px;
-  margin: 10px auto 20px auto;
-  border-bottom: 1px solid #24305E;
-}
 main .container .signup-block-wrapper .signup-block form .form-row.upload {
   justify-content: center;
   align-items: center;
@@ -99,6 +96,45 @@ main .container .signup-block-wrapper .signup-block form .form-row.upload .uploa
 main .container .signup-block-wrapper .signup-block form .form-row.upload .upload-options .pic-upload {
   width: 70%;
 }
+main .container .account-info-wrapper {
+  display: flex;
+  margin: 50px 0 50px 0;
+  justify-content: space-evenly;
+}
+main .container .account-info-wrapper .profile-pic-section {
+  text-align: center;
+  background-color: #A8D0E6;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+main .container .account-info-wrapper .profile-pic-section .img-preview {
+  margin: 30px 0 30px 0;
+}
+main .container .account-info-wrapper .profile-pic-section .img-preview img {
+  height: 150px;
+}
+main .container .account-info-wrapper .profile-pic-section .profile-options .upload-options input {
+  margin-bottom: 20px;
+}
+main .container .account-info-wrapper .profile-pic-section .profile-options .shipper {
+  margin-top: 20px;
+  text-align: left;
+}
+main .container .account-info-wrapper .account-details-section {
+  width: 60%;
+  background-color: #A8D0E6;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+main .container .account-info-wrapper .account-details-section .account-details {
+  font-size: 24px;
+  line-height: 200%;
+}
+main .container .account-info-wrapper .account-details-section.shipper .active-order-listing .listing-title {
+  font-size: 20px;
+}
 main .container .product-listing-wrapper {
   margin: 50px 0 50px 0;
 }
@@ -114,6 +150,13 @@ main .container .product-listing-wrapper .product-listing .listing-grid {
 main .container .product-listing-wrapper .product-listing .listing-grid .product.card {
   max-width: 350px;
   margin: 0 auto;
+}
+
+.divider {
+  width: 80%;
+  height: 20px;
+  margin: 10px auto 20px auto;
+  border-bottom: 1px solid #24305E;
 }
 
 footer {
@@ -173,6 +216,17 @@ footer {
   main .container .signup-block-wrapper .signup-block.login, main .container .signup-block-wrapper .signup-block.customer, main .container .signup-block-wrapper .signup-block.vendor, main .container .signup-block-wrapper .signup-block.shipper {
     width: 100%;
   }
+  main .container .account-info-wrapper {
+    display: block;
+  }
+  main .container .account-info-wrapper .account-details-section {
+    width: 100%;
+    padding: 30px;
+  }
+  main .container .account-info-wrapper .account-details-section .account-details {
+    font-size: 18px;
+    line-height: normal;
+  }
   main .container .product-listing-wrapper .product-listing .listing-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -183,6 +237,13 @@ footer {
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+  main .container .account-info-wrapper .account-details-section {
+    padding: 30px;
+  }
+  main .container .account-info-wrapper .account-details-section .account-details {
+    font-size: 20px;
+    line-height: normal;
+  }
   main .container .product-listing-wrapper .product-listing .listing-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
