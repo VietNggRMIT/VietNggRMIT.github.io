@@ -7,6 +7,7 @@
 // Body styling
 
 body {
+    background-color: #f5f5f5;
     min-height: 100vh;
     position: relative;
 }
@@ -208,11 +209,14 @@ main {
             }
         }
 
-        // Product listing styling
-        .product-listing-wrapper {
-            margin: 50px 0 50px 0;
-
+        
+        .bg-wrapper {
+            background-color: #A8D0E6;
+            
+            // Product listing styling
             .product-listing {
+                padding: 50px 0 50px 0;
+
                 .listing-title {
                     text-align: center;
                     margin-bottom: 30px;
@@ -227,6 +231,48 @@ main {
                         &.card {
                             max-width: 350px;
                             margin: 0 auto;
+                        }
+                    }
+                }
+            }
+
+            // Product details styling
+            .product-details {
+                display: grid;
+                height: 90vh;
+                grid-template-columns: repeat(2, 1fr);
+                padding: 50px 0 50px 0;
+
+                .img-section {
+                    width: 500px;
+                    height: 600px;
+                    overflow: hidden;
+                    margin: 0 auto ;
+
+                    img {
+                        
+                    }
+                }
+
+                .details-section {
+                    margin: 5px 35px 0px 20px;
+
+                    .form-title {
+                        margin-bottom: 20px;
+                    }
+
+                    .product-description {
+                        min-height: 175px;
+                        margin-bottom: 25px;
+                    }
+
+                    .product-price {
+                        margin-bottom: 30px;
+                    }
+
+                    .product-options {
+                        button {
+                            min-width: 250px;
                         }
                     }
                 }
@@ -348,7 +394,7 @@ footer {
             }
 
             // Tablet product listing styling
-            .product-listing-wrapper {
+            .bg-wrapper {
                 .product-listing {
                     .listing-grid {
                         display: grid;
@@ -359,6 +405,26 @@ footer {
                             &.card {
                                 max-width: 350px;
                             }
+                        }
+                    }
+                }
+                
+                .product-details {
+                    display: block;
+                    height: auto;
+
+                    .img-section {
+                        width: 80%;
+                        height: 300px;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .details-section {
+                        .product-options {
+                            text-align: center;
                         }
                     }
                 }
@@ -388,7 +454,7 @@ footer {
             }
 
             // Tablet product listing styling
-            .product-listing-wrapper {
+            .bg-wrapper {
                 .product-listing {
                     .listing-grid {
                         display: grid;
@@ -399,6 +465,26 @@ footer {
                             &.card {
                                 max-width: 350px;
                             }
+                        }
+                    }
+                }
+
+                .product-details {
+                    display: block;
+                    height: auto;
+
+                    .img-section {
+                        width: 80%;
+                        height: 500px;
+
+                        img {
+
+                        }
+                    }
+
+                    .details-section {
+                        .product-options {
+                            text-align: center;
                         }
                     }
                 }
