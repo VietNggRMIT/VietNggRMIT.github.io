@@ -66,24 +66,33 @@
                             <div class="form-flex">
                                 <div class="fields-section">
                                     <div class="form-row">
+                                    <div class="form-label">
+                                            <label for="biz_username">Username</label>
+                                        </div>
                                         <div class="form-field">
-                                            <input class="form-control" required type="text" id="biz_username" name="uname" maxlength="255" placeholder="Username">
+                                            <input class="form-control" required type="text" id="biz_username" name="uname" minlength="8" maxlength="15" placeholder="Username">
                                         </div>
                                     </div>
                                     <div class="form-row">
+                                        <div class="form-label">
+                                            <label for="biz_password">Password</label>
+                                        </div>
                                         <div class="form-field">
-                                            <input class="form-control" required type="password" id="biz_password" name="psw" maxlength="255" placeholder="Password">
+                                            <input class="form-control" required type="password" id="biz_password" name="psw" minlength="8" maxlength="20" placeholder="Password">
                                         </div>
                                     </div>
                                     <div class="form-row">
+                                        <div class="form-label">
+                                            <label for="biz_name">Full name</label>
+                                        </div>
                                         <div class="form-field">
-                                            <input class="form-control" required type="text" id="biz_name" name="fullname" maxlength="255" placeholder="Full name">
+                                            <input class="form-control" required type="text" id="biz_name" name="fullname" minlength="5" placeholder="Full name">
                                         </div>
                                     </div>
                                     <input type="hidden" name="utype" value="shipper">
                                     <div class="form-row">
                                         <div class="form-label">
-                                            <label for="wc">Select distribution hub: </label>
+                                            <label for="d-hub">Select distribution hub: </label>
                                         </div>
                                         <div class="form-field">
                                             <div class="dropdown">
@@ -108,10 +117,13 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <button class="btn btn-lg btn-form" name="signup">Sign up</button>
+                                <button class="btn btn-lg btn-warning" name="signup">Sign up</button>
                             </div>
                             <div class="form-row">
                                 <p>By clicking "Sign up" you agree to the <a href="privacy.html">Terms and Privacy Policy</a></p>
+                            </div>
+                            <div class="form-row">
+                                <p>Already have an account? <a href="login.html">Login</a></p>
                             </div>
                         </form>
 

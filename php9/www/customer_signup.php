@@ -64,21 +64,33 @@
 
                         <form action="verify_signup.php" method="POST" enctype="multipart/form-data">
                             <div class="form-row">
+                                <div class="form-label">
+                                    <label for="username">Username</label>
+                                </div>
                                 <div class="form-field">
                                     <input class="form-control" required type="text" id="username" name="uname" minlength="8" maxlength="15" placeholder="Username">
                                 </div>
                             </div>
                             <div class="form-row">
+                                <div class="form-label">
+                                    <label for="password">Password</label>
+                                </div>
                                 <div class="form-field">
                                     <input class="form-control" required type="password" id="password" name="psw" minlength="8" maxlength="20" placeholder="Password">
                                 </div>
                             </div>
                             <div class="form-row">
+                                <div class="form-label">
+                                    <label for="name">Full name</label>
+                                </div>
                                 <div class="form-field">
                                     <input class="form-control" required type="text" id="name" name="fullname" minlength="5" placeholder="Full Name">
                                 </div>
                             </div>
                             <div class="form-row">
+                                <div class="form-label">
+                                    <label for="address">Address</label>
+                                </div>
                                 <div class="form-field">
                                     <input class="form-control" required type="text" id="address" name="wc" minlength="5" placeholder="Address">
                                 </div>
@@ -93,10 +105,13 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <button class="btn btn-lg btn-form" name="signup" type="submit" value="Submit" onclick="verifyPassword()">Sign up</button>
+                                <button class="btn btn-lg btn-warning" name="signup" type="submit" value="Submit" onclick="verifyPassword()">Sign up</button>
                             </div>
                             <div class="form-row">
                                 <p>By clicking "Sign up" you agree to the <a href="privacy.html">Terms and Privacy Policy</a></p>
+                            </div>
+                            <div class="form-row">
+                                <p>Already have an account? <a href="login.html">Login</a></p>
                             </div>
                         </form>
 
