@@ -54,23 +54,27 @@
                             <div class="form-flex">
                                 <div class="fields-section">
                                     <div class="form-row">
+                                        <div class="form-label">
+                                            <label for="biz_username">Username</label>
+                                        </div>
                                         <div class="form-field">
-                                            <input class="form-control" required type="text" id="biz_username" name="username" maxlength="255" placeholder="Username">
+                                            <input class="form-control" required type="text" id="biz_username" name="uname" maxlength="255" placeholder="Username">
                                         </div>
                                     </div>
                                     <div class="form-row">
+                                        <div class="form-label">
+                                            <label for="biz_password">Password</label>
+                                        </div>
                                         <div class="form-field">
-                                            <input class="form-control" required type="password" id="biz_password" name="password" maxlength="255" placeholder="Password">
+                                            <input class="form-control" required type="password" id="biz_password" name="psw" maxlength="255" placeholder="Password">
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="form-field">
-                                            <input class="form-control" required type="text" id="biz_name" name="name" maxlength="255" placeholder="Business name">
+                                        <div class="form-label">
+                                            <label for="biz_name">Full name</label>
                                         </div>
-                                    </div>
-                                    <div class="form-row">
                                         <div class="form-field">
-                                            <input class="form-control" required type="text" id="biz_address" name="address" maxlength="255" placeholder="Business address">
+                                            <input class="form-control" required type="text" id="biz_name" name="fullname" maxlength="255" placeholder="Business name">
                                         </div>
                                     </div>
                                     <div class="form-row">
@@ -79,7 +83,7 @@
                                         </div>
                                         <div class="form-field">
                                             <div class="dropdown">
-                                                <select class="btn dropdown-toggle" name="d-hub" id="d-hub">
+                                                <select class="btn dropdown-toggle" name="wc" id="d-hub">
                                                     <option value="">Sample</option>
                                                     <option value="">Sample</option>
                                                 </select>
@@ -100,10 +104,13 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <button class="btn btn-lg btn-form">Sign up</button>
+                                <button class="btn btn-lg btn-warning">Sign up</button>
                             </div>
                             <div class="form-row">
                                 <p>By clicking "Sign up" you agree to the <a href="privacy.html">Terms and Privacy Policy</a></p>
+                            </div>
+                            <div class="form-row">
+                                <p>Already have an account? <a href="login.html">Login</a></p>
                             </div>
                         </form>
 

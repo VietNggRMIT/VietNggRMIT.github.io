@@ -102,6 +102,11 @@ main {
                     .form-row {
                         margin-bottom: 15px;
 
+                        .form-label {
+                            text-align: left;
+                            margin-left: 10%;
+                        }
+
                         .form-field {
                             .form-control {
                                 width: 80%;
@@ -109,13 +114,8 @@ main {
                             }
                         }
 
-                        .btn-form {
-                            background-color: #4258ad;
-                            color: #FFF;
-
-                            &:hover {
-                                background-color: #374785;
-                            }
+                        &.signin {
+                            margin-top: 35px;
                         }
 
                         &.upload {
@@ -349,6 +349,17 @@ main {
 .form-label {
     label {
         font-weight: bold;
+    }
+}
+
+button {
+    &.btn-form {
+        background-color: #4258ad;
+        color: #FFF;
+
+        &:hover {
+            background-color: #374785;
+        }
     }
 }
 

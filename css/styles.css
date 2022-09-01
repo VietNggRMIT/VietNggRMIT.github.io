@@ -67,16 +67,16 @@ main .container .signup-block-wrapper .signup-block form .form-flex {
 main .container .signup-block-wrapper .signup-block form .form-row {
   margin-bottom: 15px;
 }
+main .container .signup-block-wrapper .signup-block form .form-row .form-label {
+  text-align: left;
+  margin-left: 10%;
+}
 main .container .signup-block-wrapper .signup-block form .form-row .form-field .form-control {
   width: 80%;
   margin: 0 auto;
 }
-main .container .signup-block-wrapper .signup-block form .form-row .btn-form {
-  background-color: #4258ad;
-  color: #FFF;
-}
-main .container .signup-block-wrapper .signup-block form .form-row .btn-form:hover {
-  background-color: #374785;
+main .container .signup-block-wrapper .signup-block form .form-row.signin {
+  margin-top: 35px;
 }
 main .container .signup-block-wrapper .signup-block form .form-row.upload {
   justify-content: center;
@@ -231,6 +231,14 @@ main .container .bg-wrapper .product-details .details-section .product-options b
 
 .form-label label {
   font-weight: bold;
+}
+
+button.btn-form {
+  background-color: #4258ad;
+  color: #FFF;
+}
+button.btn-form:hover {
+  background-color: #374785;
 }
 
 footer {
