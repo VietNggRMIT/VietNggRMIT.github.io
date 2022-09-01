@@ -45,8 +45,8 @@
         </header>
         <main>
             <div class="container">
-                <div class="signup-block-wrapper">
-                    <div class="signup-block vendor">
+                <div class="bg-wrapper">
+                    <div class="add-product">
                         <div class="form-title"><h1>Add new product</h1></div>
 
                         <form>
@@ -64,23 +64,32 @@
                                 </div>
                                 <div class="fields-section">
                                     <div class="form-row">
+                                        <div class="form-label">
+                                            <label for="prod_name">Product name</label>
+                                        </div>
                                         <div class="form-field">
                                             <input class="form-control" required type="text" id="prod_name" name="prod_name" minlength="10" maxlength="20" placeholder="Product name">
                                         </div>
                                     </div>
                                     <div class="form-row">
+                                        <div class="form-label">
+                                            <label for="prod_price">Product price</label>
+                                        </div>
                                         <div class="form-field">
                                             <input class="form-control" oninput="validity.valid || (value='');" onpress="isNum(event)" required type="number" id="prod_price" name="prod_price" min="0.01" step="0.01" placeholder="Product price">
                                         </div>
                                     </div>
                                     <div class="form-row">
+                                        <div class="form-label">
+                                            <label for="prod_description">Product description</label>
+                                        </div>
                                         <div class="form-field">
-                                            <textarea class="form-control" required type="textarea" id="prod_description" name="prod_description" maxlength="500" rows="5" placeholder="Product description"></textarea>
+                                            <textarea class="form-control" required type="textarea" id="prod_description" name="prod_description" maxlength="500" rows="8" placeholder="Product description"></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <div class="form-row confirm">
                                 <button class="btn btn-lg btn-warning">Add product</button>
                             </div>
                         </form>

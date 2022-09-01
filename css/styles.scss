@@ -102,12 +102,6 @@ main {
                     .form-row {
                         margin-bottom: 15px;
 
-                        .form-label {
-                            label {
-                                font-weight: bold;
-                            }
-                        }
-
                         .form-field {
                             .form-control {
                                 width: 80%;
@@ -212,6 +206,69 @@ main {
         
         .bg-wrapper {
             background-color: #A8D0E6;
+
+            // Add product styling
+            .add-product {
+                min-height: 90vh;
+                padding: 50px 0 50px 0;
+
+                .form-title {
+                    text-align: center;
+                    margin-bottom: 30px;
+                }
+
+                form {
+                    padding: 0 70px 0 70px;
+
+                    .form-flex {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        margin-bottom: 50px;
+                        
+                        .upload-section {
+                            .upload {
+                                .img-preview {
+                                    width: 500px;
+                                    height: 450px;
+                                    overflow: hidden;
+                                    margin: 0 auto ;
+
+                                    img {
+                                        
+                                    }
+                                }
+                            }
+
+                            .upload-options {
+                                display: flex;
+                                justify-content: space-evenly;
+
+                                input {
+                                    width: 80%;
+                                }
+                            }
+                        }
+
+                        .fields-section {
+                            margin-left: 35px;
+                            
+                            .form-row {
+                                .form-field {
+                                    margin-bottom: 20px ;
+                                }
+                            }
+                        }
+                    }
+
+                    .confirm {
+                        text-align: center;
+
+                        button {
+                            min-width: 250px;
+                        }
+                    }
+                }
+            }
             
             // Product listing styling
             .product-listing {
@@ -287,6 +344,12 @@ main {
     height: 20px;
     margin: 10px auto 20px auto;
     border-bottom: 1px solid #24305E;
+}
+
+.form-label {
+    label {
+        font-weight: bold;
+    }
 }
 
 // Footer styling
