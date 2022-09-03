@@ -194,6 +194,8 @@ main {
                 }
 
                 &.shipper {
+                    padding: 20px;
+
                     .active-order-listing {
                         .listing-title {
                             font-size: 20px;
@@ -350,7 +352,7 @@ main {
             .column-labels, .product {
                 display: grid;
                 grid-template-columns: 250px auto 100px 120px 100px 100px;
-                grid-column-gap: 15px;
+                column-gap: 15px;
                 text-align: center;
 
                 .product-description {
@@ -387,6 +389,7 @@ main {
                     .product-quantity {
                         input {
                             width: 70%;
+                            margin: 0 auto;
                         }
                     }
 
@@ -410,6 +413,52 @@ main {
 
             .place-order {
                 text-align: right;
+            }
+        }
+
+        // Shipper active orders styling
+        .active-order-listing {
+            margin-top: 20px;
+
+            .column-labels {
+                margin-bottom: 15px;
+
+                .orders {
+                    text-align: left;
+                }
+            }
+
+            .column-labels, .order {
+                display: grid;
+                grid-template-columns: 40% 15% 15% 30%;
+                text-align: center;
+            }
+
+            .active-orders {
+                a {
+                    text-decoration: none;
+                    color: #000;
+
+                    &.order {
+                        background-color: #f5f5f5;
+                        padding: 10px;
+                        margin-bottom: 10px;
+                        border-radius: 3px;
+                        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+    
+                        .title {
+                            text-align: left;
+                        }
+
+                        .status {
+                            color: green;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: #F8E9A1;
+                    }
+                }
             }
         }
     }
@@ -588,7 +637,7 @@ footer {
                     .cart {
                         .product {
                             grid-template-columns: 30% 70%;
-                            grid-column-gap: 5px;
+                            column-gap: 5px;
 
                             .product-image {
                                 width: 100%;
