@@ -210,7 +210,7 @@ main .container .bg-wrapper .product-details .img-section {
 main .container .bg-wrapper .product-details .details-section {
   margin: 5px 35px 0px 20px;
 }
-main .container .bg-wrapper .product-details .details-section .form-title {
+main .container .bg-wrapper .product-details .details-section .product-title, main .container .bg-wrapper .product-details .details-section .product-vendor {
   margin-bottom: 20px;
 }
 main .container .bg-wrapper .product-details .details-section .product-description {
