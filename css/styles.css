@@ -454,6 +454,7 @@ footer {
   main .container .bg-wrapper .product-details .img-section {
     width: 80%;
     height: auto;
+    margin-bottom: 30px;
   }
   main .container .bg-wrapper .product-details .img-section img {
     width: 100%;
