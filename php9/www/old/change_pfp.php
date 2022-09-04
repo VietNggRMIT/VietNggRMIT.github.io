@@ -5,7 +5,7 @@ if (!isset($_POST["changepfp"])){
 }
 else{
     if(isset($_SESSION['user']['uname'])){
-        if(isset($_FILES['newpfp']) && $_FILES['newpfp']['error'] == ERR_UPLOAD_OK){
+        if(isset($_FILES['newpfp']) && $_FILES['newpfp']['error'] == UPLOAD_ERR_OK){
             $imageType = strtolower(pathinfo($_FILES['newpfp']['name'])['extension']);
             $pfp_dir = "pfp/";
             $new_pfp_name = $pfp_dir . $_SESSION['user']['uname'] . "." . $imageType;
@@ -18,10 +18,11 @@ else{
             header("Location: welcome.php");
         }
         else {
-            echo "upload error";
+            $_SESSION['pfperror'] = true;
+            header("Location: welcome.php");
         }
     }
     else{
-        echo "session uname error";
+        header("Location: login.php");
     }
 }

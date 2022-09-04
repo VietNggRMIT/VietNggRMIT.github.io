@@ -25,6 +25,10 @@
             echo "<img src=\"pfp/default_pfp.jpg\" width=\"200\">";
         }
     }
+    if(isset($_SESSION['pfperror'])){
+        echo "There is an error with your image, please choose another file.";
+        unset($_SESSION['pfperror']);
+    }
 ?>
 <form action="change_pfp.php" method="POST" enctype="multipart/form-data">
     <label for="newpfp"><b>Upload new profile picture?</b></label>
