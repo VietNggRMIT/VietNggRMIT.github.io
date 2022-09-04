@@ -15,7 +15,7 @@
                     <a class="navbar-brand me-auto" href="index.html">
                         <img class="brand-logo" src="https://logopond.com/logos/8eaaac3a2fe79ea70f852b5c332c7efb.png" alt="Brand logo">
                     </a>
-                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavbar">
+                    <button class="navbar-toggler ms-auto" type="button">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="navbar-collapse collapse" id="collapseNavbar">
@@ -76,7 +76,7 @@
                                             <label for="prod_price">Product price</label>
                                         </div>
                                         <div class="form-field">
-                                            <input class="form-control" oninput="validity.valid || (value='');" onpress="isNum(event)" required type="number" id="prod_price" name="prod_price" min="0.01" step="0.01" placeholder="Product price">
+                                            <input class="form-control" oninput="validity.valid || (value='');" onkeypress="isNum(event)" required type="number" id="prod_price" name="prod_price" min="0.00" step="0.01" placeholder="Product price">
                                         </div>
                                     </div>
                                     <div class="form-row">

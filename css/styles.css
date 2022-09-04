@@ -133,6 +133,9 @@ main .container .account-info-wrapper .account-details-section .account-details 
 main .container .account-info-wrapper .account-details-section.shipper {
   padding: 20px;
 }
+main .container .account-info-wrapper .account-details-section.shipper .title {
+  text-align: center;
+}
 main .container .account-info-wrapper .account-details-section.shipper .active-order-listing .listing-title {
   font-size: 20px;
 }
@@ -193,8 +196,39 @@ main .container .product-listing .listing-grid {
   grid-row-gap: 30px;
 }
 main .container .product-listing .listing-grid .product.card {
+  transition: all 0.2s ease-in-out;
   max-width: 350px;
   margin: 0 auto;
+  text-decoration: none;
+  color: #000;
+}
+main .container .product-listing .listing-grid .product.card .card-body .price {
+  color: #F76C6C;
+}
+main .container .product-listing .listing-grid .product.card:hover {
+  background-color: #F8E9A1;
+}
+main .container .product-listing .search-filter-section {
+  width: 80%;
+  margin: 0 auto 50px auto;
+}
+main .container .product-listing .search-filter-section .search-input {
+  margin: 0 auto 15px auto;
+  display: flex;
+}
+main .container .product-listing .search-filter-section .search-input input {
+  width: 70%;
+}
+main .container .product-listing .search-filter-section .search-input button {
+  width: 30%;
+}
+main .container .product-listing .search-filter-section .filter-input {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+main .container .product-listing .search-filter-section .filter-input input, main .container .product-listing .search-filter-section .filter-input button {
+  width: 80%;
 }
 main .container .shopping-cart {
   padding: 50px 30px 20px 30px;
@@ -270,6 +304,7 @@ main .container .active-order-listing .column-labels, main .container .active-or
   text-align: center;
 }
 main .container .active-order-listing .active-orders a {
+  transition: all 0.2s ease-in-out;
   text-decoration: none;
   color: #000;
 }

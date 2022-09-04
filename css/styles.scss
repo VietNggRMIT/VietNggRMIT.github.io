@@ -196,6 +196,10 @@ main {
                 &.shipper {
                     padding: 20px;
 
+                    .title {
+                        text-align: center;
+                    }
+
                     .active-order-listing {
                         .listing-title {
                             font-size: 20px;
@@ -289,8 +293,49 @@ main {
 
                 .product {
                     &.card {
+                        transition: all 0.2s ease-in-out;
                         max-width: 350px;
                         margin: 0 auto;
+                        text-decoration: none;
+                        color: #000;
+                        
+                        .card-body {
+                            .price {
+                                color: #F76C6C;
+                            }
+                        }
+
+                        &:hover {
+                            background-color: #F8E9A1;
+                        }
+                    }
+                }
+            }
+
+            .search-filter-section {
+                width: 80%;
+                margin: 0 auto 50px auto;
+
+                .search-input {
+                    margin: 0 auto 15px auto;
+                    display: flex;
+
+                    input {
+                        width: 70%;
+                    }
+
+                    button {
+                        width: 30%;
+                    }
+                }
+
+                .filter-input {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    justify-items: center;
+
+                    input, button {
+                        width: 80%;
                     }
                 }
             }
@@ -394,7 +439,9 @@ main {
             }
 
             .active-orders {
+
                 a {
+                    transition: all 0.2s ease-in-out;
                     text-decoration: none;
                     color: #000;
 
