@@ -5,11 +5,15 @@ if (!isset($_POST["changepfp"])){
 }
 else{
     if(isset($_SESSION['user']['uname'])){
-        if(isset($_FILES['newpfp'])){
+        if(isset($_FILES['newpfp']) && $_FILES['newpfp']['error'] == ERR_UPLOAD_OK){
             $imageType = strtolower(pathinfo($_FILES['newpfp']['name'])['extension']);
             $pfp_dir = "pfp/";
             $new_pfp_name = $pfp_dir . $_SESSION['user']['uname'] . "." . $imageType;
+            $def_pfp = "pfp/default_pfp.jpg";
             move_uploaded_file($_FILES['newpfp']['tmp_name'], $new_pfp_name);
+            if(isset($_SESSION['user']['pfp']) && $_SESSION['user']['pfp'] != $def_pfp){ //delete old pfp if exists
+                unlink($_SESSION['user']['pfp']);
+            }
             $_SESSION['user']['pfp'] = $new_pfp_name;
             header("Location: welcome.php");
         }
