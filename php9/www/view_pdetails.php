@@ -1,3 +1,17 @@
+<?php 
+    session_start(); 
+    if (count($_GET) <= 0 ) { 
+        header("Location: view_all_prod.php");
+    }
+    if (isset($_GET["view_prod"])){
+        $pid = $_GET["pid"];
+        $pname = $_GET["pname"];
+        $pvendor = $_GET["pvendor"];
+        $price = $_GET["price"];
+        $pimg = $_GET["pimg"];
+        $pdesc = $_GET["pdesc"];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,6 +21,14 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
         <title>Home Page</title>
+        <script type="text/javascript">
+            function addtocart(){
+                // var ord_num = document.getElementById("ord_num").value;
+                var ord_key = "<?= $pid ; ?>";
+                var ord_val = "<?= $pname . "-" . $pvendor . "-" . $price; ?>";
+                localStorage.setItem(ord_key,ord_val);
+            }
+        </script>
     </head>
     <body>
         <header>
@@ -48,22 +70,21 @@
                 <div class="product-detail-wrapper">
                     <div class="product-details d-flex">
                         <div class="img-section">
-                            <img class="img-file" src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg">
+                            <img class="img-file" src="<?= $pimg; ?>">
                         </div>
                         <div class="details-section">
-                            <div class="form-title"><h1>Product Name</h1></div>
+                            <div class="form-title"><h1><?= $pname; ?></h1></div>
                             <div class="product description">
-                                <p>Lorem ipsum sit amet Dior</p>
-                                <p>Lorem ipsum sit amet Dior</p>
-                                <p>Lorem ipsum sit amet Dior</p>
-                                <p>Lorem ipsum sit amet Dior</p>
-                                <p>Lorem ipsum sit amet Dior</p>
+                                <p><?= $pvendor; ?></p>
+                                <p><?= $pdesc; ?></p>
                             </div>
                             <div class="product-price">
-                                <h2>$99.99</h2>
+                                <h2><?= $price; ?> VND</h2>
                             </div>
                             <div class="product-options d-flex">
-                                <button class="btn btn-primary btn-lg">Add to cart</button>
+                                <button class="btn btn-primary btn-lg" onclick="addtocart()">Add to cart</button>
+                                <button class="btn btn-primary btn-lg" onclick="viewcart()">View Cart</button>
+                                <button class="btn btn-primary btn-lg" onclick="clearcart()">Clear cart (to test)</button>
                             </div>
                         </div>
                     </div>

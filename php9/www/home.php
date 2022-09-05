@@ -1,4 +1,47 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+    function read_searchfilter() {
+        $file_name = '../nva_prod.csv';
+        $fp = fopen($file_name, 'r');
+        $first = fgetcsv($fp);
+        $products = [];
+        while ($row = fgetcsv($fp)) {
+            $i = 0;
+            $product = [];
+            foreach ($first as $col_name) {
+                $product[$col_name] =  $row[$i];
+                if ($col_name == 'size') {
+                    $product[$col_name] = explode(',', $product[$col_name]);
+                }
+                $i++;
+            }
+            if(isset($_POST['min_price']) && is_numeric($_POST['min_price'])){
+                if($product['price'] < $_POST['min_price']){
+                    continue;
+                }
+            }
+            if(isset($_POST['max_price']) && is_numeric($_POST['max_price'])){
+                if($product['price'] > $_POST['max_price']){
+                    continue;
+                }
+            }
+            if(isset($_POST['product_name']) && !empty($_POST['product_name'])){
+                if(strpos($product['product_name'], $_POST['product_name']) === false){
+                    continue;
+                }
+            }
+            if(isset($_POST['vendor']) && !empty($_POST['vendor'])){
+                if(strpos($product['vendor'], $_POST['vendor']) === false){
+                    continue;
+                }
+            }
+            $products[] = $product;
+        }
+        // overwrite the session variable
+        $_SESSION['products'] = $products;
+    }
+    read_searchfilter();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -63,48 +106,48 @@
                             </form>
                         </div>
                         <div class="listing-grid">
-                            <a href="product_detail.html" class="product card">
-                                <img src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg" class="card-img-top" alt="Product image">
-                                <div class="card-body">
-                                    <p class="card-text">Lorem ipsum sit amet Dior</p>
-                                    <p class="card-text price">Price: $99.99</p>
-                                </div>
-                            </a>
-                            <a href="product_detail.html" class="product card">
-                                <img src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg" class="card-img-top" alt="Product image">
-                                <div class="card-body">
-                                    <p class="card-text">Lorem ipsum sit amet Dior</p>
-                                    <p class="card-text price">Price: $99.99</p>
-                                </div>
-                            </a>
-                            <a href="product_detail.html" class="product card">
-                                <img src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg" class="card-img-top" alt="Product image">
-                                <div class="card-body">
-                                    <p class="card-text">Lorem ipsum sit amet Dior</p>
-                                    <p class="card-text price">Price: $99.99</p>
-                                </div>
-                            </a>
-                            <a href="product_detail.html" class="product card">
-                                <img src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg" class="card-img-top" alt="Product image">
-                                <div class="card-body">
-                                    <p class="card-text">Lorem ipsum sit amet Dior</p>
-                                    <p class="card-text price">Price: $99.99</p>
-                                </div>
-                            </a>
-                            <a href="product_detail.html" class="product card">
-                                <img src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg" class="card-img-top" alt="Product image">
-                                <div class="card-body">
-                                    <p class="card-text">Lorem ipsum sit amet Dior</p>
-                                    <p class="card-text price">Price: $99.99</p>
-                                </div>
-                            </a>
-                            <a href="product_detail.html" class="product card">
-                                <img src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg" class="card-img-top" alt="Product image">
-                                <div class="card-body">
-                                    <p class="card-text">Lorem ipsum sit amet Dior</p>
-                                    <p class="card-text price">Price: $99.99</p>
-                                </div>
-                            </a>
+                            <?php
+                                if (isset($_SESSION['products'])){
+                                    foreach($_SESSION['products'] as $p_details){
+                                        $pid = $p_details['pid'];
+                                        $pname = $p_details['product_name'];
+                                        $pvendor = $p_details['vendor'];
+                                        $price = $p_details['price'];
+                                        $pdesc = $p_details['description'];
+                                        $pimg = "";
+                                        //get product image, use default img if not available
+                                        $prod_dir = "res/prod/";
+                                        $def_prod = $prod_dir . "default_prod.jpg";
+                                        $scan = scandir($prod_dir);
+                                        foreach($scan as $file) {
+                                            if ($file == "." || $file == "..") { }//do nothing - just to be safe
+                                            else{
+                                                $file_uname = explode(".", $file)[0]; //pid portion of img file
+                                                if($pid == $file_uname){
+                                                    $pimg = $prod_dir . $file;
+                                                }
+                                            }
+                                        }
+                                        if(!$pimg){
+                                            $pimg = $def_prod;
+                                        }
+                                ?>
+                                        <div class="card-body">
+                                            <img src="<?= $pimg; ?>" class="card-img-top" alt="<?= $pname; ?>">
+                                            <p class="card-text"><?= $pname . ", by $pvendor"; ?></p>
+                                            <p class="card-text price">Price: <?= $price; ?></p>
+                                            <form action="view_pdetails.php" method="GET" class="product card">
+                                                <input type="hidden" name="pid" value="<?= $pid ?>">
+                                                <input type="hidden" name="pname" value="<?= $pname ?>">
+                                                <input type="hidden" name="pvendor" value="<?= $pvendor ?>">
+                                                <input type="hidden" name="price" value="<?= $price ?>">
+                                                <input type="hidden" name="pimg" value="<?= $pimg ?>">
+                                                <input type="hidden" name="pdesc" value="<?= $pdesc ?>">
+                                                <button type="submit" name="view_prod">View this product</button>
+                                            </form>
+                                        </div>
+                                <?php } 
+                                } ?>
                         </div>
                     </div>
                 </div>

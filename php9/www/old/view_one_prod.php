@@ -19,15 +19,17 @@ if (isset($_GET["view_prod"])){
             var ord_val = "<?= $pname . "-" . $pvendor . "-" . $price; ?>";
             localStorage.setItem(ord_key,ord_val);
         }
-        // function viewcart(){ //view cart in another page?
-        //     var output = "";
-        //     for(var a in localStorage){
-        //         if(localStorage.hasOwnProperty(a)){ //just for firefox users, who will also list functions
-        //             output += "ID: " + a + " -- " + localStorage[a] + "\n";
-        //         }
-        //     }
-        //     document.getElementById("cart_items").innerHTML = output;
-        // }
+        function viewcart(){
+            var addurl = "view_cart.php?pid="; //put this at the end of url later
+            for(var a in localStorage){
+                if(localStorage.hasOwnProperty(a)){ //just for firefox users, who will also list functions
+                    addurl += a + ",";
+                }
+            }
+            addurl = addurl.replace(/,+$/, ""); //remove the last comma
+            addurl += "&view_cart="
+            window.location.replace(addurl);
+        }
         function clearcart(){
             localStorage.clear();
             document.getElementById("cart_items").innerHTML = "";
@@ -35,6 +37,6 @@ if (isset($_GET["view_prod"])){
     </script>
     <!-- <input type="text" id="ord_num" name="ord_num" placeholder="Number of orders" /> -->
     <button onclick="addtocart()">Add to Cart</button>
-    <a href="view_cart.php"> <button>View Cart</button> </a>
+    <button onclick="viewcart()">View Cart</button>
     <button onclick="clearcart()">Clear cart (to test)</button>
     <p id="cart_items" type="text"></p>
