@@ -8,16 +8,8 @@ for (let i = 0; i < collapseBtn.length; i++) {
     })
 }
 
-// Number input validation
-function isNum(event) {
-    event = (event) ? event: window.event;
-    let charCode = (event.which) ? event:which : event.keyCode;
-    if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode !== 46) {
-        event.preventDefault();
-    } else {
-        return true;
-    }
-}
+
+
 
 // Username input validation
 
@@ -89,5 +81,16 @@ function verifyPassword() {
 
     if (!found) {
         return false;
+    }
+}
+
+// Number input validation
+function isNum(event) {
+    event = (event) ? event: window.event;
+    let charCode = (event.which) ? event.which : event.keyCode;
+    if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode !== 46) {
+        event.preventDefault();
+    } else {
+        return true;
     }
 }

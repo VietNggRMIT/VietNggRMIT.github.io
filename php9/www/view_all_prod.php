@@ -43,7 +43,6 @@ function read_searchfilter() {
                 continue;
             }
         }
-        
         $products[] = $product;
     }
     // overwrite the session variable
