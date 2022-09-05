@@ -24,10 +24,10 @@
                     <div class="navbar-collapse collapse" id="collapseNavbar">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html">Home</a>
+                                <a class="nav-link" href="home.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page 2</a>
+                                <a class="nav-link" href="view_cart.php">Cart</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Page 3</a>
@@ -39,7 +39,14 @@
                                 <a class="nav-link" href="about.html">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Login</a>
+                                <?php
+                                    if(isset($_SESSION['user']['type'])){ //user has logged in
+                                        echo "<a class=\"nav-link\" href=\"" . $_SESSION['user']['type'] . "_account.php\">Account</a>";
+                                    }
+                                    else{
+                                        echo "<a class=\"nav-link\" href=\"login.php\">Login</a>";
+                                    }
+                                ?>
                             </li>
                         </ul>
                     </div>

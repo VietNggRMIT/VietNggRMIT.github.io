@@ -8,9 +8,6 @@ for (let i = 0; i < collapseBtn.length; i++) {
     })
 }
 
-
-
-
 // Username input validation
 
 // Password input validation
