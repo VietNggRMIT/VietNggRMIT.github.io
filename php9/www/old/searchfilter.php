@@ -2,7 +2,7 @@
 session_start();
 
 function read_searchfilter() {
-    $file_name = 'products.csv';
+    $file_name = 'data/products.csv';
     $fp = fopen($file_name, 'r');
     $first = fgetcsv($fp);
     $products = [];
