@@ -50,12 +50,13 @@
                         <div class="listing-title"><h1>New products</h1></div>
                         <form class="search-filter-form">
                             <div class="search-input">
-                                <input class="form-control" type="search" placeholder="Search...">
-                                <button class="btn btn-warning btn-lg">Search</button>
+                                <input class="form-control search" type="search" placeholder="Search...">
                             </div>
                             <div class="filter-input">
                                 <input class="form-control" type="number" oninput="validity.valid || (value='');" onkeypress="isNum(event)" required id="min_price" name="filter_price" min="0.00" step="1" placeholder="Min price">
                                 <input class="form-control" type="number" oninput="validity.valid || (value='');" onkeypress="isNum(event)" required id="max_price" name="filter_price" min="0.00" step="1" placeholder="Max price">
+                            </div>
+                            <div class="form-btn">
                                 <button class="btn btn-warning btn-lg">Filter</button>
                             </div>
                         </form>
