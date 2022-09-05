@@ -56,13 +56,20 @@
                         </div>
                         <div class="profile-options">
                             <div class="upload-options">
-                                <input class="form-control pic-upload" type="file" id="formFile"></input>
-                                <button class="btn btn-primary btn-form">Change profile picture</button>
+                                <form action="change_pfp.php" method="POST" enctype="multipart/form-data">
+                                    <input class="form-control pic-upload" type="file" id="formFile" name="newpfp"></input>
+                                    <button class="btn btn-primary btn-form" type="submit" name="changepfp">Change profile picture</button>
                             </div>
+                            <?php
+                                if(isset($_SESSION['pfperror'])){
+                                    echo "Error choosing your new profile picture.";
+                                    unset($_SESSION['pfperror']);
+                                }
+                            ?>
                             <div class="account-details shipper">
-                                <div>Username: </div>
-                                <div>Name: </div>
-                                <div>Distribution hub: </div>
+                                <div>Username: <?= $_SESSION['user']['uname']; ?></div>
+                                <div>Name: <?= $_SESSION['user']['fullname']; ?></div>
+                                <div>Distribution hub: <?= $_SESSION['user']['wc']; ?></div>
                             </div>
                             <div class="divider"></div>
                             <button class="btn btn-warning btn-lg">Logout</button>

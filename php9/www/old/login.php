@@ -1,4 +1,4 @@
-<img src="../res/1.jpg" width="200" height="200">
+<img src="pfp/default_pfp.jpg" width="200" height="200">
 <a href="homepage.php">Log in </a>
 <form action="verify_login.php" method="post">
   <div class="container">

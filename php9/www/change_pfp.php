@@ -15,11 +15,11 @@ else{
                 unlink($_SESSION['user']['pfp']);
             }
             $_SESSION['user']['pfp'] = $new_pfp_name;
-            header("Location: welcome.php");
+            header("Location: ". $_SESSION['user']['type'] . "_account.php");;
         }
         else {
             $_SESSION['pfperror'] = true;
-            header("Location: welcome.php");
+            header("Location: ". $_SESSION['user']['type'] . "_account.php");;
         }
     }
     else{

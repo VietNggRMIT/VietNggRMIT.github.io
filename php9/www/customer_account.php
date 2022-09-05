@@ -56,10 +56,17 @@
                         </div>
                         <div class="profile-options">
                             <div class="upload-options">
-                                <input class="form-control pic-upload" type="file" id="formFile"></input>
-                                <button class="btn btn-primary btn-form">Change profile picture</button>
+                                <form action="change_pfp.php" method="POST" enctype="multipart/form-data">
+                                    <input class="form-control pic-upload" type="file" id="formFile" name="newpfp"></input>
+                                    <button class="btn btn-primary btn-form" type="submit" name="changepfp">Change profile picture</button>
                             </div>
                             <div class="divider"></div>
+                            <?php
+                                if(isset($_SESSION['pfperror'])){
+                                    echo "Error choosing your new profile picture.";
+                                    unset($_SESSION['pfperror']);
+                                }
+                            ?>
                             <button class="btn btn-warning btn-lg">Logout</button>
                         </div>
                     </div>
