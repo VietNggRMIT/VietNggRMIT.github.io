@@ -10,10 +10,10 @@ else{
             $pfp_dir = "pfp/";
             $new_pfp_name = $pfp_dir . $_SESSION['user']['uname'] . "." . $imageType;
             $def_pfp = "pfp/default_pfp.jpg";
-            move_uploaded_file($_FILES['newpfp']['tmp_name'], $new_pfp_name);
             if(isset($_SESSION['user']['pfp']) && $_SESSION['user']['pfp'] != $def_pfp){ //delete old pfp if exists
                 unlink($_SESSION['user']['pfp']);
             }
+            move_uploaded_file($_FILES['newpfp']['tmp_name'], $new_pfp_name);
             $_SESSION['user']['pfp'] = $new_pfp_name;
             header("Location: ". $_SESSION['user']['type'] . "_account.php");;
         }
