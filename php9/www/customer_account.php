@@ -63,7 +63,7 @@
                             <div class="divider"></div>
                             <?php
                                 if(isset($_SESSION['pfperror'])){
-                                    echo "Error choosing your new profile picture.";
+                                    echo '<div class="alert alert-warning" role="alert">Error choosing your new profile picture.</div>';
                                     unset($_SESSION['pfperror']);
                                 }
                             ?>

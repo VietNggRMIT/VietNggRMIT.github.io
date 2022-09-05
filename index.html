@@ -48,17 +48,17 @@
                 <div class="bg-wrapper">
                     <div class="product-listing">
                         <div class="listing-title"><h1>New products</h1></div>
-                        <div class="search-filter-section">
-                            <form class="search-input">
+                        <form class="search-filter-form">
+                            <div class="search-input">
                                 <input class="form-control" type="search" placeholder="Search...">
                                 <button class="btn btn-warning btn-lg">Search</button>
-                            </form>
-                            <form class="filter-input">
+                            </div>
+                            <div class="filter-input">
                                 <input class="form-control" type="number" oninput="validity.valid || (value='');" onkeypress="isNum(event)" required id="min_price" name="filter_price" min="0.00" step="1" placeholder="Min price">
                                 <input class="form-control" type="number" oninput="validity.valid || (value='');" onkeypress="isNum(event)" required id="max_price" name="filter_price" min="0.00" step="1" placeholder="Max price">
                                 <button class="btn btn-warning btn-lg">Filter</button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                         <div class="listing-grid">
                             <a href="product_detail.html" class="product card">
                                 <img src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg" class="card-img-top" alt="Product image">

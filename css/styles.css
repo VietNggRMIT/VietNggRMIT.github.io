@@ -208,26 +208,26 @@ main .container .product-listing .listing-grid .product.card .card-body .price {
 main .container .product-listing .listing-grid .product.card:hover {
   background-color: #F8E9A1;
 }
-main .container .product-listing .search-filter-section {
+main .container .product-listing .search-filter-form {
   width: 80%;
   margin: 0 auto 50px auto;
 }
-main .container .product-listing .search-filter-section .search-input {
+main .container .product-listing .search-filter-form .search-input {
   margin: 0 auto 15px auto;
   display: flex;
 }
-main .container .product-listing .search-filter-section .search-input input {
+main .container .product-listing .search-filter-form .search-input input {
   width: 70%;
 }
-main .container .product-listing .search-filter-section .search-input button {
+main .container .product-listing .search-filter-form .search-input button {
   width: 30%;
 }
-main .container .product-listing .search-filter-section .filter-input {
+main .container .product-listing .search-filter-form .filter-input {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
 }
-main .container .product-listing .search-filter-section .filter-input input, main .container .product-listing .search-filter-section .filter-input button {
+main .container .product-listing .search-filter-form .filter-input input, main .container .product-listing .search-filter-form .filter-input button {
   width: 80%;
 }
 main .container .shopping-cart {
