@@ -46,7 +46,7 @@ read_searchfilter();
 
 if (isset($_SESSION['products'])){
     foreach($_SESSION['products'] as $p_details){
-        $pid = $p_details['id'];
+        $pid = $p_details['pid'];
         $pname = $p_details['product_name'];
         $pvendor = $p_details['vendor'];
         $price = $p_details['price'];

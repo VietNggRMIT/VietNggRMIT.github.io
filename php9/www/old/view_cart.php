@@ -1,6 +1,6 @@
 <script>
     function removeitem(pid){ //remove an item from localstorage. refresh page and show items.
-        localStorage.removeitem(pid);
+        localStorage.removeItem(pid);
         var addurl = "view_cart.php?pid="; //put this at the end of url later
             for(var a in localStorage){
                 if(localStorage.hasOwnProperty(a)){ //just for firefox users, who will also list functions
@@ -47,12 +47,13 @@
                 echo "ID: ". $product['pid'] . "<br>";
                 echo $product['product_name'] . " by " . $product['vendor'] . " costs " . $product['price'] . "<br>";
                 if($product['description']){
-                    echo "Description: " . $product['description'] . "<br><br>";
+                    echo "Description: " . $product['description'] . "<br>";
                 }
                 else{
-                    echo "Description: (none) <br><br>";
+                    echo "Description: (none) <br>";
                 }
+                echo "<button onclick=\"removeitem(" . $product['pid'] . ")\">Remove this item</button><br><br>";
             }
         }
-        echo "<button onclick=\"placeorder()\">Place Order</button>";
+        echo "<br><button onclick=\"placeorder()\">Place Order</button>";
     }

@@ -111,7 +111,7 @@ function viewcart(){
     window.location.replace(addurl);
 }
 function removeitem(pid){ //remove an item from localstorage. refresh page and show items.
-    localStorage.removeitem(pid);
+    localStorage.removeItem(pid);
     var addurl = "view_cart.php?pid="; //put this at the end of url later
         for(var a in localStorage){
             if(localStorage.hasOwnProperty(a)){ //just for firefox users, who will also list functions
