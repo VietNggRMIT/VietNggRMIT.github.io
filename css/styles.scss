@@ -353,14 +353,22 @@ main {
                 width: 100%;
             }
 
-            .column-labels, .product {
+            .column-labels {
                 display: grid;
-                grid-template-columns: 250px auto 100px 120px 100px 100px;
+                grid-template-columns: 75% 25%;
                 column-gap: 15px;
                 text-align: center;
+                margin: 0px 15px 35px;
 
-                .product-description {
-                    text-align: left;
+                .product-specs-labels {
+                    .product-description {
+                        text-align: left;
+                    }
+                }
+
+                .cart-options-labels {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
                 }
             }
 
@@ -368,37 +376,47 @@ main {
                 padding: 10px 0 0 0;
 
                 .product {
-                    margin-bottom: 35px;
+                    display: grid;
+                    grid-template-columns: 75% 25%;
+                    column-gap: 15px;
+                    margin: 0 15px 35px 15px;
 
-                    .product-image {
-                        width: 250px;
-                        height: 150px;
-                        overflow: hidden;
-                        margin: 0 auto ;
+                    .product-specs {
+                        display: flex;
+                        column-gap: 15px;
 
-                        img {
+                        .product-image {
                             width: 250px;
-                        }
-                    }
+                            height: 150px;
+                            overflow: hidden;
+                            margin: 0 auto ;
     
-                    .product-info {
-                        text-align: left;
+                            img {
+                                width: 250px;
+                            }
+                        }
 
-                        .product-vendor {
+                        .product-info {
+                            text-align: left;
+    
+                            .product-vendor {
+                                font-weight: 500;
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+
+                    .cart-options {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        column-gap: 15px;
+                        justify-items: center;
+
+                        .product-line-price {
                             font-weight: 500;
-                            margin-bottom: 5px;
+                            font-size: 18px;
                         }
-                    }
 
-                    .product-quantity {
-                        input {
-                            width: 70%;
-                            margin: 0 auto;
-                        }
-                    }
-
-                    .product-line-price {
-                        font-weight: 500;
                     }
                 }
             }
@@ -581,7 +599,7 @@ footer {
     height: 50px;
 }
 
-.footer-wrapper{
+.footer-wrapper {
     .footer-bg {
         background-color: #24305E;
 
@@ -610,9 +628,8 @@ footer {
                         }
 
                         &:not(:last-child):after {
-                            content: "|"
+                            content: "|";
                         }
-
                     }
                 }
             }
@@ -716,31 +733,37 @@ footer {
                 }
 
                 .shopping-cart {
+                    padding-bottom: 50px;
+
                     .column-labels {
                         display: none;
                     }
     
                     .cart {
                         .product {
-                            grid-template-columns: 30% 70%;
-                            column-gap: 5px;
+                            display: block;
 
-                            .product-image {
-                                width: 100%;
-
-                                img {
-                                    max-width: 150px;
+                            .product-specs {
+                                display: block;
+    
+                                .product-image {
+                                    width: 70%;
+                                    margin: 0 0 15px 0;
                                 }
                             }
     
-                            .product-quantity {
-                                input {
-                                    width: 50%;
+                            .cart-options {
+                                display: flex;
+                                justify-content: flex-end;
+                                align-items: center;
+    
+                                .product-removal {
+                                    margin-bottom: 0;
                                 }
-                            }
-
-                            .product-line-price {
-                                align-self: center;
+    
+                                .product-line-price {
+                                    text-align: center;
+                                }
                             }
                         }
                     }
@@ -784,6 +807,33 @@ footer {
                                     &:not(:last-child) {
                                         margin-bottom: 10px;
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Mobile footer styling
+    footer {
+        .footer-wrapper {
+            .footer-bg {
+                .footer-content {
+                    padding-right: var(--bs-gutter-x,.75rem);
+                    padding-left: var(--bs-gutter-x,.75rem);
+
+                    .footer-links {
+                        ul {
+                            display: block;
+
+                            li {
+                                display: block;
+
+
+                                &:not(:last-child):after {
+                                    content: "";
                                 }
                             }
                         }
@@ -866,15 +916,25 @@ footer {
 
                 .cart {
                     .product {
-                        grid-template-columns: 25% 55% 20%;
+                        .product-specs {
+                            display: block;
 
-                        .product-image {
-                            width: 100%;
+                            .product-image {
+                                width: 100%;
+                                margin-bottom: 15px;
+                            }
                         }
 
-                        .product-quantity {
-                            input {
-                                width: 50%;
+                        .cart-options {
+                            display: block;
+                            margin: auto;
+
+                            .product-removal {
+                                margin-bottom: 15px;
+                            }
+
+                            .product-line-price {
+                                text-align: center;
                             }
                         }
                     }
