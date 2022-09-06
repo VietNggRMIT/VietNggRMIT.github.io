@@ -104,12 +104,18 @@
                                 <input class="form-control" type="search" placeholder="Search...">
                                 <button class="btn btn-warning btn-lg">Search</button>
                             </form> -->
-                            <form class="filter-input" method="post" action="home.php">
+                            <form class="search-filter-form" method="post" action="home.php">
                                 <!-- Search by name <input type="text" name="product_name"> -->
-                                <input class="form-control" type="search" placeholder="Search..." name="product_name">
-                                <input class="form-control" type="number" oninput="validity.valid || (value='');" onkeypress="isNum(event)" required id="min_price" name="min_price" min="0.00" step="1" placeholder="Min price">
-                                <input class="form-control" type="number" oninput="validity.valid || (value='');" onkeypress="isNum(event)" required id="max_price" name="max_price" min="0.00" step="1" placeholder="Max price">
-                                <button class="btn btn-warning btn-lg" type="submit" name="act">Filter</button>
+                                <div class="search-input">
+                                    <input class="form-control" type="search" placeholder="Search..." name="product_name">
+                                </div>
+                                <div class="filter-input">
+                                    <input class="form-control" type="number" oninput="validity.valid || (value='');" onkeypress="isNum(event)" id="min_price" name="min_price" min="0.00" step="1" placeholder="Min price">
+                                    <input class="form-control" type="number" oninput="validity.valid || (value='');" onkeypress="isNum(event)" id="max_price" name="max_price" min="0.00" step="1" placeholder="Max price">
+                                </div>
+                                <div class="form-btn">
+                                    <button class="btn btn-warning btn-lg" type="submit" name="act">Filter</button>
+                                </div>
                             </form>
                         </div>
                         <div class="listing-grid">
@@ -139,10 +145,14 @@
                                             $pimg = $def_prod;
                                         }
                                 ?>
-                                        <div class="card-body">
-                                            <img src="<?= $pimg; ?>" class="card-img-top" alt="<?= $pname; ?>">
-                                            <p class="card-text"><?= $pname . ", by $pvendor"; ?></p>
-                                            <p class="card-text price">Price: <?= $price; ?></p>
+                                        <div class="product card">
+                                            <div class="img-section">
+                                                <img src="<?= $pimg; ?>" class="card-img-top" alt="<?= $pname; ?>">
+                                            </div>
+                                            <div class=card-body>
+                                                <p class="card-text"><?= $pname . ", by $pvendor"; ?></p>
+                                                <p class="card-text price">Price: <?= $price; ?></p>
+                                            </div>
                                             <form action="view_pdetails.php" method="GET" class="product card">
                                                 <input type="hidden" name="pid" value="<?= $pid ?>">
                                                 <input type="hidden" name="pname" value="<?= $pname ?>">
@@ -150,7 +160,7 @@
                                                 <input type="hidden" name="price" value="<?= $price ?>">
                                                 <input type="hidden" name="pimg" value="<?= $pimg ?>">
                                                 <input type="hidden" name="pdesc" value="<?= $pdesc ?>">
-                                                <button type="submit" name="view_prod">View this product</button>
+                                                <button class="btn btn-primary" type="submit" name="view_prod">View this product</button>
                                             </form>
                                         </div>
                                 <?php } 

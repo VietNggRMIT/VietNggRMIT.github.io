@@ -202,6 +202,12 @@ main .container .product-listing .listing-grid .product.card {
   text-decoration: none;
   color: #000;
 }
+main .container .product-listing .listing-grid .product.card .img-section {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  margin: 0 auto;
+}
 main .container .product-listing .listing-grid .product.card .card-body .price {
   color: #F76C6C;
 }
