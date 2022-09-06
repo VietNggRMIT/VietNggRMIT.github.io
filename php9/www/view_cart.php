@@ -75,7 +75,7 @@
                             if (isset($_GET["view_cart"])){
                                 $pid_list = explode(',',$_GET["pid"]);
                                 //read csv file and return items with the same pids
-                                $file_name = '../nva_prod.csv';
+                                $file_name = '../products.csv';
                                 $fp = fopen($file_name, 'r');
                                 $first = fgetcsv($fp);
                                 while ($row = fgetcsv($fp)) {

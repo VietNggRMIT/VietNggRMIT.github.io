@@ -1,5 +1,6 @@
 <?php 
     session_start(); 
+    include("find_prod_pfp.php");
     if(!isset($_SESSION['user']['type'])){ //non-login people got here
         header("Location: home.php");
     }
@@ -79,6 +80,31 @@
                             <div>Username: <?= $_SESSION['user']['uname']; ?></div>
                             <div>Business name: <?= $_SESSION['user']['fullname']; ?></div>
                             <div>Business address: <?= $_SESSION['user']['wc']; ?></div>
+                            <div>My products:</div>
+                            <?php
+                                $v_fname = $_SESSION['user']['fullname']; //look for this in products.csv
+                                $file_name = '../products.csv';
+                                $fp = fopen($file_name, 'r');
+                                $first = fgetcsv($fp);
+                                while ($row = fgetcsv($fp)) {
+                                    $i = 0;
+                                    $product = [];
+                                    foreach ($first as $col_name) {
+                                        $product[$col_name] =  $row[$i];
+                                        if ($col_name == 'size') {
+                                            $product[$col_name] = explode(',', $product[$col_name]);
+                                        }
+                                        $i++;
+                                    }
+                                    if($product['vendor'] == $v_fname){
+                                        $pimg = find_prod_pfp($product['pid']);
+                                        echo "PID: " . $product['pid'] . " -- Name: " . $product['product_name'] . "<br>";
+                                        echo "Price: " . $product['price'] . "<br>";
+                                        echo "Description: " . $product['description'] . "<br>";
+                                        echo "<img src=\"$pimg\" width=\"200\" height=\"200\"></img><br>";
+                                    }
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>

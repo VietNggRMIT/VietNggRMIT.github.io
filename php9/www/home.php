@@ -1,7 +1,8 @@
 <?php 
+    include("find_prod_pfp.php");
     session_start(); 
     function read_searchfilter() {
-        $file_name = '../nva_prod.csv';
+        $file_name = '../products.csv';
         $fp = fopen($file_name, 'r');
         $first = fgetcsv($fp);
         $products = [];
@@ -134,23 +135,7 @@
                                         $pvendor = $p_details['vendor'];
                                         $price = $p_details['price'];
                                         $pdesc = $p_details['description'];
-                                        $pimg = "";
-                                        //get product image, use default img if not available
-                                        $prod_dir = "res/prod/";
-                                        $def_prod = $prod_dir . "default_prod.jpg";
-                                        $scan = scandir($prod_dir);
-                                        foreach($scan as $file) {
-                                            if ($file == "." || $file == "..") { }//do nothing - just to be safe
-                                            else{
-                                                $file_uname = explode(".", $file)[0]; //pid portion of img file
-                                                if($pid == $file_uname){
-                                                    $pimg = $prod_dir . $file;
-                                                }
-                                            }
-                                        }
-                                        if(!$pimg){
-                                            $pimg = $def_prod;
-                                        }
+                                        $pimg = find_prod_pfp($pid);
                                 ?>
                                         <div class="product card">
                                             <div class="img-section">
