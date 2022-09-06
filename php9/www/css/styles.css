@@ -23,9 +23,6 @@ header nav .container-fluid .navbar-brand .brand-logo {
   height: 50px;
 }
 
-main .container .text-content {
-  margin: 30px 0 30px 0;
-}
 main .container .signup-block-wrapper {
   margin: 50px 0 50px 0;
 }
@@ -183,6 +180,14 @@ main .container .bg-wrapper .add-product form .confirm {
 main .container .bg-wrapper .add-product form .confirm button {
   min-width: 250px;
 }
+main .container .text-content {
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px 0 30px 0;
+}
+main .container .text-content .text-title {
+  margin-bottom: 15px;
+}
 main .container .product-listing {
   padding: 50px 0 50px 0;
 }
@@ -248,7 +253,7 @@ main .container .shopping-cart .column-labels {
   -moz-column-gap: 15px;
        column-gap: 15px;
   text-align: center;
-  margin: 0px 15px 35px;
+  margin: 0px 15px 20px 15px;
 }
 main .container .shopping-cart .column-labels .product-specs-labels .product-description {
   text-align: left;
@@ -276,7 +281,6 @@ main .container .shopping-cart .cart .product .product-specs .product-image {
   width: 250px;
   height: 150px;
   overflow: hidden;
-  margin: 0 auto;
 }
 main .container .shopping-cart .cart .product .product-specs .product-image img {
   width: 250px;
@@ -543,7 +547,7 @@ footer {
     display: block;
   }
   main .container .bg-wrapper .shopping-cart .cart .product .product-specs .product-image {
-    width: 70%;
+    width: 100%;
     margin: 0 0 15px 0;
   }
   main .container .bg-wrapper .shopping-cart .cart .product .cart-options {
