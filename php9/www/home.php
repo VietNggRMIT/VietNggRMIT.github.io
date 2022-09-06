@@ -1,47 +1,9 @@
 <?php 
-    include("find_prod_pfp.php");
+    include("prod_func.php");
     session_start(); 
-    function read_searchfilter() {
-        $file_name = '../products.csv';
-        $fp = fopen($file_name, 'r');
-        $first = fgetcsv($fp);
-        $products = [];
-        while ($row = fgetcsv($fp)) {
-            $i = 0;
-            $product = [];
-            foreach ($first as $col_name) {
-                $product[$col_name] =  $row[$i];
-                if ($col_name == 'size') {
-                    $product[$col_name] = explode(',', $product[$col_name]);
-                }
-                $i++;
-            }
-            if(isset($_POST['min_price']) && is_numeric($_POST['min_price'])){
-                if($product['price'] < $_POST['min_price']){
-                    continue;
-                }
-            }
-            if(isset($_POST['max_price']) && is_numeric($_POST['max_price'])){
-                if($product['price'] > $_POST['max_price']){
-                    continue;
-                }
-            }
-            if(isset($_POST['product_name']) && !empty($_POST['product_name'])){
-                if(strpos($product['product_name'], $_POST['product_name']) === false){
-                    continue;
-                }
-            }
-            if(isset($_POST['vendor']) && !empty($_POST['vendor'])){
-                if(strpos($product['vendor'], $_POST['vendor']) === false){
-                    continue;
-                }
-            }
-            $products[] = $product;
-        }
-        // overwrite the session variable
-        $_SESSION['products'] = $products;
+    if(isset($_POST['min_price']) || isset($_POST['max_price']) || isset($_POST['product_name'])){
+        read_searchfilter($_POST['min_price'], $_POST['max_price'], $_POST['product_name']);
     }
-    read_searchfilter();
 ?>
 <!DOCTYPE html>
 <html lang="en">
