@@ -120,14 +120,14 @@ function removeitem(pid){ //remove an item from localstorage. refresh page and s
     window.location.replace(addurl);
 }
 function placeorder(){ //send GET data to another page, which would show order details
-    var addurl = "view_order.php?pid="; //put this at the end of url later
+    var addurl = "verify_order.php?pid="; //put this at the end of url later
         for(var a in localStorage){
             if(localStorage.hasOwnProperty(a)){ //just for firefox users, who will also list functions
                 addurl += a + ",";
             }
         }
     addurl = addurl.replace(/,+$/, ""); //remove the last comma
-    addurl += "&view_order="
+    addurl += "&verify_order="
     localStorage.clear();
     window.location.replace(addurl);
 }

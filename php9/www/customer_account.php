@@ -1,5 +1,9 @@
 <?php 
     session_start(); 
+    if(isset($_SESSION['user']['type'])){ //non-login people got here
+        header("Location: home.php");
+    }
+    else{ //caught at the end of the doc
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,23 +34,15 @@
                                 <a class="nav-link" href="#" onclick="viewcart()">Cart</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page 3</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page 4</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="about.html">About Us</a>
                             </li>
                             <li class="nav-item">
                                 <?php
-                                    if(isset($_SESSION['user']['type'])){ //user has logged in
-                                        echo "<a class=\"nav-link\" href=\"" . $_SESSION['user']['type'] . "_account.php\">Account</a>";
-                                    }
-                                    else{
-                                        echo "<a class=\"nav-link\" href=\"login.php\">Login</a>";
-                                    }
+                                    echo "<a class=\"nav-link\" href=\"" . $_SESSION['user']['type'] . "_account.php\">Account</a>";
                                 ?>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="logout.php">Log out</a>
                             </li>
                         </ul>
                     </div>
@@ -117,3 +113,4 @@
         </footer>
     </body>
 </html>
+<?php } ?>

@@ -3,7 +3,7 @@
     if (count($_GET) <= 0 ) { //no submitted data
         header("Location: view_cart.php");
     }
-    if (isset($_GET['view_order'])){
+    if (isset($_GET['verify_order'])){
         if (isset($_SESSION['user']['wc']) && isset($_SESSION['user']['uname'])){ //address for customers
             $new_oid = 1; //set an order id, increment until it is unique
             $prod_list = $_GET['pid'];
@@ -27,12 +27,11 @@
             }
             //output to be put in the orders.csv file
             $output = "$new_oid,\"$prod_list\",$hub,$user_adr\n";
-            echo "Sup, user " . $_SESSION['user']['uname'] . 
-                ". Your order will be shipped soon.";
-            echo "Order details: " . $output;
             $ord_f = fopen($file_name, 'a');
             fwrite($ord_f, $output);
             fclose($ord_f);
+            $_SESSION['ord_msg'] = "Your order will be delivered to $user_adr soon!";
+            header("Location: home.php");
         }
         else{ //users havent logged in; redirect on view_cart.php failed?
             header("Location: login.php");

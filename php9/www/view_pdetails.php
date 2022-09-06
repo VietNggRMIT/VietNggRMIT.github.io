@@ -38,7 +38,7 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand me-auto" href="index.html">
+                    <a class="navbar-brand me-auto" href="home.php">
                         <img class="brand-logo" src="https://logopond.com/logos/8eaaac3a2fe79ea70f852b5c332c7efb.png" alt="brand-logo" height="50px">
                     </a>
                     <button class="navbar-toggler ms-auto" type="button">

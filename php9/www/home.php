@@ -56,7 +56,7 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand me-auto" href="index.html">
+                    <a class="navbar-brand me-auto" href="home.php">
                         <img class="brand-logo" src="https://logopond.com/logos/8eaaac3a2fe79ea70f852b5c332c7efb.png" alt="Brand logo">
                     </a>
                     <button class="navbar-toggler ms-auto" type="button">
@@ -98,6 +98,12 @@
             <div class="container">
                 <div class="bg-wrapper">
                     <div class="product-listing">
+                        <p><?php
+                            if (isset($_SESSION['ord_msg'])){
+                                echo $_SESSION['ord_msg'];
+                                unset($_SESSION['ord_msg']);
+                            }
+                        ?></p>
                         <div class="listing-title"><h1>New products</h1></div>
                         <div class="search-filter-section">
                             <!-- <form class="search-input">
