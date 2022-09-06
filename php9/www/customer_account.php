@@ -1,6 +1,6 @@
 <?php 
     session_start(); 
-    if(isset($_SESSION['user']['type'])){ //non-login people got here
+    if(!isset($_SESSION['user']['type'])){ //non-login people got here
         header("Location: home.php");
     }
     else{ //caught at the end of the doc

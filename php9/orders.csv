@@ -4,3 +4,4 @@ oid,products,hub,user_addr
 3,"2",Hub 2,123 S Street
 4,"2",Hub 1,123 S Street
 5,"3",Hub 3,123 S Street
+6,"2,3",Hub 1,123 S Street

@@ -71,12 +71,6 @@
                                 <a class="nav-link" href="#" onclick="viewcart()">Cart</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page 3</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page 4</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="about.html">About Us</a>
                             </li>
                             <li class="nav-item">
@@ -89,6 +83,13 @@
                                     }
                                 ?>
                             </li>
+                            <?php
+                                if(isset($_SESSION['user']['uname'])){ //only show this if user logged in
+                                    echo "<li class=\"nav-item\">";
+                                    echo "<a class=\"nav-link\" href=\"logout.php\">Log out</a>";
+                                    echo "</li>";
+                                }
+                            ?>
                         </ul>
                     </div>
                 </div>
