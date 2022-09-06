@@ -1,7 +1,7 @@
 <?php 
     session_start(); 
     if (count($_GET) <= 0 ) { 
-        header("Location: view_all_prod.php");
+        header("Location: home.php");
     }
     if (isset($_GET["view_prod"])){
         $pid = $_GET["pid"];
@@ -10,6 +10,9 @@
         $price = $_GET["price"];
         $pimg = $_GET["pimg"];
         $pdesc = $_GET["pdesc"];
+    }
+    else{ //naked url -> tampering
+        header("Location: home.php");
     }
 ?>
 <!DOCTYPE html>
@@ -23,10 +26,11 @@
         <title>Home Page</title>
         <script type="text/javascript">
             function addtocart(){
-                // var ord_num = document.getElementById("ord_num").value;
+                //this function accesses variable from this page only
                 var ord_key = "<?= $pid ; ?>";
                 var ord_val = "<?= $pname . "-" . $pvendor . "-" . $price; ?>";
                 localStorage.setItem(ord_key,ord_val);
+                document.getElementById("add_conf").innerHTML = "Item added successfully.";
             }
         </script>
     </head>
@@ -91,8 +95,9 @@
                             <div class="product-options d-flex">
                                 <button class="btn btn-primary btn-lg" onclick="addtocart()">Add to cart</button>
                                 <button class="btn btn-primary btn-lg" onclick="viewcart()">View Cart</button>
-                                <button class="btn btn-primary btn-lg" onclick="clearcart()">Clear cart (to test)</button>
+                                <button class="btn btn-primary btn-lg" onclick="clearcart()">Clear cart</button>
                             </div>
+                            <p id="add_conf"></p>
                         </div>
                     </div>
                 </div>

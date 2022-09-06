@@ -2,7 +2,7 @@
 session_start();
 //trying to access this page without submitting -> login page
 if (count($_POST) <= 0 ) { 
-    header("Location: homepage.php");
+    header("Location: login.php");
 }
 if (isset($_POST["signup"])){
     $userlist = file ('../accounts.db'); //read the file into an array of lines
@@ -51,7 +51,7 @@ if (isset($_POST["signup"])){
         $uploaded = TRUE;
         $imageFileType = strtolower(pathinfo($target_file)['extension']);
         $err_mes = "";
-        // Disallow files that are too big (5mb)
+        // Disallow files that are too big
         if ($_FILES["fileup"]["size"] > 5000000) {
             $err_mes = "Sorry, your file is too large.";
             $uploaded = FALSE;
@@ -65,7 +65,7 @@ if (isset($_POST["signup"])){
         if (!$uploaded) { 
             echo $err_mes . " Please try again.";
             $reg_success = FALSE;
-            header( "Refresh:5; url=homepage.php", true, 303);
+            header( "Refresh:5; url=" . $_SESSION['tryagain'], true, 303);
         } 
         else {
             $new_pfp = $target_dir  . $new_uname . "." . $imageFileType;
@@ -74,7 +74,7 @@ if (isset($_POST["signup"])){
             } else {
                 echo "Sorry, there was an error uploading your file. Default pfp used.";
                 $_SESSION['user']['pfp'] = $def_pfp;
-                header( "Refresh:5; url=welcome.php", true, 303);
+                //header( "Refresh:5; url=home.php", true, 303);
             }
         }
     }

@@ -1,2 +1,4 @@
 oid,products,hub,user_addr
-1,"""1,3,4""",Hub 1,124 A St.
+1,"1,3,4",Hub 1,124 A St.
+2,"3",Hub 3,123 S Street
+3,"2",Hub 2,123 S Street
