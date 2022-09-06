@@ -68,7 +68,7 @@
                                 <a class="nav-link" href="home.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="view_cart.php">Cart</a>
+                                <a class="nav-link" href="#" onclick="viewcart()">Cart</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Page 3</a>
