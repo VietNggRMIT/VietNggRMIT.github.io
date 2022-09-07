@@ -1,6 +1,6 @@
 <?php 
     session_start(); 
-    include("prod_func.php");
+    include("func.php");
     if(!isset($_SESSION['user']['type'])){ //non-login people got here
         header("Location: home.php");
     }

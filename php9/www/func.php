@@ -1,5 +1,24 @@
 <?php
     //session_start();
+    function get_pfp($uname){
+        //get user pfp
+        $pfp_dir = "pfp/";
+        $scan = scandir($pfp_dir);
+        $my_pfp = "";
+        foreach($scan as $file) {
+            if ($file == "." || $file == "..") { }//do nothing - just to be safe
+            else{
+                $file_uname = explode(".", $file)[0]; //username portion of img file
+                if($uname == $file_uname){
+                    $my_pfp = $pfp_dir . $file;
+                }
+            }
+        }
+        if(!$my_pfp){
+            $my_pfp = $pfp_dir . "default_pfp.jpg";
+        }
+        return $my_pfp;
+    }
     function find_prod_pfp($pid){
         $pimg = "";
         //get product image, use default img if not available

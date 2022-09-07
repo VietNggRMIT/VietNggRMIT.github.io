@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("prod_func.php");
+    include("func.php");
     if(!isset($_SESSION['user']['type']) && $_SESSION['user']['type'] != 'shipper'){
         header("Location: home.php");
     }
@@ -102,7 +102,7 @@
                                     <div class="order-recepient">Deliver to: <?= get_ord_deets($oid)['user_addr']; ?></div>
                                 </div>
                             </div>
-                            <form class="order-status-selection">
+                            <form class="order-status-selection" action="update_order.php" method="POST">
                                 <div class="form-label">
                                     <label>Order status:</label>
                                 </div>
@@ -119,10 +119,10 @@
                                         <input type="radio" id="order_canceled" name="order_status" value="canceled">
                                         <i>Canceled</i>
                                     </label>
+                                    <div class="form-field">
+                                        <button class="btn btn-lg btn-warning" type="submit">Update order</button>
+                                    </div>
                                 </form>
-                                <div class="form-field">
-                                    <button class="btn btn-lg btn-warning">Update order</button>
-                                </div>
                             </form>
                         </div>
                     </div>

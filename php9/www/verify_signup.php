@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("func.php");
 //trying to access this page without submitting -> login page
 if (count($_POST) <= 0 ) { 
     header("Location: login.php");
@@ -80,12 +81,15 @@ if (isset($_POST["signup"])){
     }
     if($reg_success){    
         $pw_file = fopen("../accounts.db", "a");
-        $entry = sprintf("%s|+|%s|+|%s|+|%s|+|%s\n", $new_utype, $new_uname, $new_fullname, $new_wc, $new_pw);
+        $pw_hash = password_hash($new_pw, PASSWORD_DEFAULT);
+        $entry = sprintf("%s|+|%s|+|%s|+|%s|+|%s\n", $new_utype, $new_uname, $new_fullname, $new_wc, $pw_hash);
         fwrite($pw_file, $entry);
         fclose($pw_file);
         $_SESSION['user']['type'] = $new_utype;
         $_SESSION['user']['fullname'] = $new_fullname;
         $_SESSION['user']["uname"] = $new_uname;
+        $_SESSION['user']['wc'] = $new_wc;
+        $_SESSION['user']['pfp'] = get_pfp($new_uname);
         unset($_SESSION['signup_failed']);
         header("Location: ". $_SESSION['user']['type'] . "_account.php");
     }

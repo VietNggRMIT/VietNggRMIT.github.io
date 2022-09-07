@@ -89,8 +89,9 @@
                                             <div class="dropdown">
                                                 <!-- wc: wildcard - for shippers -> dist hub -->
                                                 <select class="btn dropdown-toggle" name="wc" id="d-hub">
-                                                    <option value="Sample 1">Sample 1</option>
-                                                    <option value="Sample 2">Sample 2</option>
+                                                    <option value="Hub 1">Hub 1</option>
+                                                    <option value="Hub 2">Hub 2</option>
+                                                    <option value="Hub 3">Hub 3</option>
                                                 </select>
                                             </div>
                                         </div>
