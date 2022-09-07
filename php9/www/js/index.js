@@ -131,3 +131,7 @@ function placeorder(){ //send GET data to another page, which would show order d
     localStorage.clear();
     window.location.replace(addurl);
 }
+function view_ship_order(oid, pid_list){
+    var addurl = "shipper_order.php?oid=" + oid + "&pids=" + pid_list + "&ship_ord=";
+    window.location.replace(addurl);
+}

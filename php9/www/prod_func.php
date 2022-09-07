@@ -20,3 +20,59 @@
         }
         return $pimg;
     }
+    function get_prod_deets($pid){
+        $prod_fname = "../products.csv";
+        $fp = fopen($prod_fname, 'r');
+        $first = fgetcsv($fp);
+        $p_deets = [];
+        while ($row = fgetcsv($fp)) {
+            $i = 0;
+            $prod = []; //single row of order
+            foreach ($first as $col_name) {
+                $prod[$col_name] =  $row[$i];
+                $i++;
+            }
+            if($prod['pid'] == $pid){
+                $p_deets['pname'] = $prod['product_name'];
+                $p_deets['price'] = $prod['price'];
+                $p_deets['vendor']= $prod['vendor'];
+                $p_deets['description'] = $prod['description'];
+                break;
+            }
+        }
+        if($p_deets) { return $p_deets; }
+        else { return false; }
+    }
+    function get_hub_adr($hub){
+        $fname = "../dhubs.csv";
+        $hub_list = file ($fname);
+        foreach ($hub_list as $hub_line) {
+            $hub_data = explode('|+|',$hub_line);
+            if($hub == $hub_data[0])
+                return $hub_data[1];
+            }
+        return false;
+    }
+    function get_ord_deets($oid){
+        $ord_fname = "../orders.csv";
+        $fp = fopen($ord_fname, 'r');
+        $first = fgetcsv($fp);
+        $o_deets = [];
+        while ($row = fgetcsv($fp)) {
+            $i = 0;
+            $ord = []; //single row of order
+            foreach ($first as $col_name) {
+                $ord[$col_name] =  $row[$i];
+                $i++;
+            }
+            if($ord['oid'] == $oid){
+                $o_deets['products'] = $ord['products'];
+                $o_deets['hub'] = $ord['hub'];
+                $o_deets['user_addr']= $ord['user_addr'];
+                $o_deets['status'] = $ord['status'];
+                break;
+            }
+        }
+        if($o_deets) { return $o_deets; }
+        else { return false; }
+    }

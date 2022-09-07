@@ -1,6 +1,7 @@
 <?php 
     include("prod_func.php");
     session_start(); 
+    //putting this function on another page -> no items shown?
     function read_searchfilter() {
         $file_name = '../products.csv';
         $fp = fopen($file_name, 'r');

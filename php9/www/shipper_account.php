@@ -1,6 +1,7 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['user']['type'])){ //non-login people got here
+    include("prod_func.php");
+    if(!isset($_SESSION['user']['type']) || !isset($_SESSION['user']['wc'])){ //non-login people got here
         header("Location: home.php");
     }
     else{ //caught at the end of the doc
@@ -79,9 +80,53 @@
                         </div>
                     </div>
                     <div class="account-details-section shipper">
-                        <h2>Shipper account information</h2>
+                        <h2 class="title">Active orders</h2>
                         <div class="active-order-listing">
-                            <div class="form-title">Active orders</div>
+                            <div class="column-labels">
+                                <label class="orders">Orders</label>
+                                <label class="status">Order ID</label>
+                                <label class="order-price">Price</label>
+                                <label class="order-recipient">Address</label>
+                            </div>
+                            <div class="active-orders">
+                                <?php
+                                    $ord_fname = "../orders.csv";
+                                    $fp = fopen($ord_fname, 'r');
+                                    $first = fgetcsv($fp);
+                                    //technically those would have the same amount of elements
+                                    while ($row = fgetcsv($fp)) {
+                                        $i = 0;
+                                        $ord = []; //single row of order
+                                        foreach ($first as $col_name) {
+                                            $ord[$col_name] =  $row[$i];
+                                            if($col_name == "products"){
+                                                $ord[$col_name] = explode(',', $ord[$col_name]);
+                                            }
+                                            $i++;
+                                        }
+                                        //hub from session = hub in file -> match!
+                                        if($_SESSION['user']['wc'] == $ord['hub']){ 
+                                            //spit out items in $ord['products']
+                                            $item_list = "";
+                                            $ord_total = 0;
+                                            foreach($ord['products'] as $pid){
+                                                $item_list .= get_prod_deets($pid)['pname'] . ", ";
+                                                $ord_total += get_prod_deets($pid)['price'];
+                                            }
+                                            $item_list = rtrim($item_list, ', '); //get rid of the last comma and space
+                                            $oid = $ord['oid'];
+                                            $pid_list = '[' . implode(',', $ord['products']) . ']';
+                                            echo "<a class=\"order\" href=\"javascript:view_ship_order($oid,$pid_list)\">";
+                                            echo "<div class=\"title\">$item_list</div>";
+                                            echo "<div class=\"status\">" . $ord['oid'] . "</div>";
+                                            echo "<div class=\"price\">$ord_total VND</div>";
+                                            echo "<div class=\"recipient\">" . $ord['user_addr'] . "</div>";
+                                            echo "</a>";
+                                        }
+                                        
+                                    }
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>

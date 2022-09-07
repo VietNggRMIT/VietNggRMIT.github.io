@@ -26,7 +26,7 @@
                 }
             }
             //output to be put in the orders.csv file
-            $output = "$new_oid,\"$prod_list\",$hub,$user_adr\n";
+            $output = "$new_oid,\"$prod_list\",$hub,$user_adr,active\n";
             $ord_f = fopen($file_name, 'a');
             fwrite($ord_f, $output);
             fclose($ord_f);
