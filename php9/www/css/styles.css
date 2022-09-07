@@ -385,10 +385,24 @@ main .container .product-details .details-section .product-description {
   margin-bottom: 25px;
 }
 main .container .product-details .details-section .product-options {
-  margin-top: 30px;
+  margin: 30px auto 30px auto;
 }
 main .container .product-details .details-section .product-options button {
+  display: block;
   min-width: 250px;
+  margin-bottom: 15px;
+}
+main .container .product-details .details-section .alert-msg {
+  width: 300px;
+}
+main .container .product-details .details-section .alert-msg .conf-msg {
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.2s ease-in-out;
+}
+main .container .product-details .details-section .alert-msg .conf-msg.active {
+  opacity: 1;
+  z-index: 1;
 }
 main .container .product-details .details-section .order-details {
   display: grid;
@@ -522,6 +536,7 @@ footer {
   main .container .bg-wrapper .product-details {
     display: block;
     height: auto;
+    padding: 50px 0 0 0;
   }
   main .container .bg-wrapper .product-details .img-section {
     width: 80%;
@@ -533,6 +548,10 @@ footer {
   }
   main .container .bg-wrapper .product-details .details-section .product-options {
     text-align: center;
+  }
+  main .container .bg-wrapper .product-details .details-section .product-options button {
+    display: block;
+    margin: 0 auto 30px auto;
   }
   main .container .bg-wrapper .shopping-cart {
     padding-bottom: 50px;
@@ -559,6 +578,9 @@ footer {
     margin-bottom: 0;
   }
   main .container .bg-wrapper .shopping-cart .cart .product .cart-options .product-line-price {
+    text-align: center;
+  }
+  main .container .product-details .details-section {
     text-align: center;
   }
   main .container .product-details .details-section .product-description {
@@ -622,8 +644,19 @@ footer {
     width: 80%;
     height: 500px;
   }
-  main .container .bg-wrapper .product-details .details-section .product-options {
+  main .container .bg-wrapper .product-details .img-section .img-file {
+    display: block;
+    margin: 0 auto;
+  }
+  main .container .bg-wrapper .product-details .details-section {
+    margin-top: 30px;
     text-align: center;
+  }
+  main .container .bg-wrapper .product-details .details-section .product-options {
+    display: flex;
+    justify-content: center;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
   }
   main .container .product-details .details-section .product-description {
     min-height: auto;

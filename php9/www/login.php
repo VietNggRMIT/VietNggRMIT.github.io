@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -40,7 +41,6 @@
                     <div class="signup-block login">
                         <div class="form-title"><h1>Welcome to G29-Lazada!</h1></div>
                         <?php 
-                            session_start();
                             if(isset($_SESSION['login'])){
                                 echo "<div class=\"form-title\"><h2>Wrong username or password.</h2></div>";
                             }
