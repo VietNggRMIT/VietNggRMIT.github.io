@@ -115,7 +115,7 @@
                                 <p>By clicking "Sign up" you agree to the <a href="privacy.html">Terms and Privacy Policy</a></p>
                             </div>
                             <div class="form-row">
-                                <p>Already have an account? <a href="login.html">Login</a></p>
+                                <p>Already have an account? <a href="login.php">Login</a></p>
                             </div>
                         </form>
 

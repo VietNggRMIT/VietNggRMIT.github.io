@@ -75,9 +75,9 @@
                             <div class="form-row signup-options">
                                 <div class="divider"></div>
                                 <p>Don't have an account yet?</p>
-                                <p><a href="customer_signup.html">Sign up as customer</a></p>
-                                <p><a href="vendor_signup.html">Sign up as vendor</a></p>
-                                <p><a href="shipper_signup.html">Sign up as shipper</a></p>
+                                <p><a href="customer_signup.php">Sign up as customer</a></p>
+                                <p><a href="vendor_signup.php">Sign up as vendor</a></p>
+                                <p><a href="shipper_signup.php">Sign up as shipper</a></p>
                             </div>
                         </form>
 

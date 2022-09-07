@@ -1,10 +1,8 @@
 <?php 
     session_start();
-    $current = 'vendor_signup.php';
-    if(isset($_SESSION['tryagain']) && $_SESSION['tryagain'] != $current){ //user tried to sign up in other pages
-        unset($_SESSION['signup_failed']);
+    if(!isset($_SESSION['user']['type']) && $_SESSION['user']['type'] != 'vendor'){
+        header("Location: home.php");
     }
-    $_SESSION['tryagain'] = $current;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +12,7 @@
         <script src="js/index.js" async></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
-        <title>Vendor Signup</title>
+        <title>Add New Product</title>
     </head>
     <body>
         <header>
@@ -32,10 +30,13 @@
                                 <a class="nav-link" href="home.php">Home</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="vendor_account">Account</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="about.html">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="login.php">Login</a>
+                                <a class="nav-link" href="logout.php">Log out</a>
                             </li>
                         </ul>
                     </div>
@@ -44,70 +45,57 @@
         </header>
         <main>
             <div class="container">
-                <div class="signup-block-wrapper">
-                    <div class="signup-block vendor">
-                        <div class="form-title"><h1>Vendor sign up</h1></div>
+                <div class="bg-wrapper">
+                    <div class="add-product">
+                        <div class="form-title"><h1>Add new product</h1></div>
                         <?php
-                            if(isset($_SESSION['signup_failed'])){
-                                echo "<h2>Your username or business address is taken.</h2>";
-                              }
+                            if(isset($_SESSION['addp_failed'])){
+                                echo "Product registration failed. You may have added this product.";
+                                unset($_SESSION['addp_failed']);
+                            }
                         ?>
-                        <form action="verify_signup.php" method="POST" enctype="multipart/form-data">
+                        <form action="verify_product.php" method="POST" enctype="multipart/form-data">
                             <div class="form-flex">
-                                <div class="fields-section">
-                                    <div class="form-row">
-                                        <div class="form-label">
-                                            <label for="biz_username">Username</label>
-                                        </div>
-                                        <div class="form-field">
-                                            <input class="form-control" required type="text" id="biz_username" name="uname" minlength="8" maxlength="15" placeholder="Username">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-label">
-                                            <label for="biz_password">Password</label>
-                                        </div>
-                                        <div class="form-field">
-                                            <input class="form-control" required type="password" id="biz_password" name="psw" minlength="8" maxlength="20" placeholder="Password">
-                                        </div>
-                                    </div>
-                                    <input type="hidden" name="utype" value="vendor">
-                                    <div class="form-row">
-                                        <div class="form-label">
-                                            <label for="biz_name">Business name</label>
-                                        </div>
-                                        <div class="form-field">
-                                            <input class="form-control" required type="text" id="biz_name" name="fullname" minlength="5" placeholder="Business name">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-label">
-                                            <label for="biz_address">Business address</label>
-                                        </div>
-                                        <div class="form-field">
-                                            <input class="form-control" required type="text" id="biz_address" name="wc" minlength="5" placeholder="Business address">
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="upload-section">
                                     <div class="form-row upload">
                                         <div class="img-preview">
-                                            <img class="img-file" src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg" alt="Profile picture">
+                                            <p>Default product image</p>
+                                            <img class="img-file" src="res/prod/default_prod.jpg" alt="Product image">
                                         </div>
                                         <div class="upload-options">
-                                            <input class="form-control pic-upload" type="file" id="formFile" name="fileup">
+                                            <input class="form-control pic-upload" type="file" id="prod_pfp" name="prod_pfp">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fields-section">
+                                    <div class="form-row">
+                                        <div class="form-label">
+                                            <label for="pname">Product name</label>
+                                        </div>
+                                        <div class="form-field">
+                                            <input class="form-control" required type="text" id="pname" name="pname" minlength="5" maxlength="20" placeholder="Product name">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-label">
+                                            <label for="price">Product price</label>
+                                        </div>
+                                        <div class="form-field">
+                                            <input class="form-control" oninput="validity.valid || (value='');" onkeypress="isNum(event)" required type="number" id="price" name="price" min="0.00" step="0.01" placeholder="Product price">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-label">
+                                            <label for="pdesc">Product description (advised)</label>
+                                        </div>
+                                        <div class="form-field">
+                                            <textarea class="form-control"  type="textarea" id="pdesc" name="pdesc" maxlength="500" rows="8" placeholder="Product description"></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <button class="btn btn-lg btn-warning" name="signup">Sign up</button>
-                            </div>
-                            <div class="form-row">
-                                <p>By clicking "Sign up" you agree to the <a href="privacy.html">Terms and Privacy Policy</a></p>
-                            </div>
-                            <div class="form-row">
-                                <p>Already have an account? <a href="login.php">Login</a></p>
+                            <div class="form-row confirm">
+                                <button class="btn btn-lg btn-warning" name="addproduct">Add product</button>
                             </div>
                         </form>
 
@@ -140,6 +128,5 @@
                 </div>
             </div>
         </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>

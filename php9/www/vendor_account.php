@@ -63,6 +63,7 @@
                                 <form action="change_pfp.php" method="POST" enctype="multipart/form-data">
                                     <input class="form-control pic-upload" type="file" id="formFile" name="newpfp"></input>
                                     <button class="btn btn-primary btn-form" type="submit" name="changepfp">Change profile picture</button>
+                                </form>
                             </div>
                             <?php
                                 if(isset($_SESSION['pfperror'])){
@@ -71,6 +72,7 @@
                                 }
                             ?>
                             <div class="divider"></div>
+                            <a href="vendor_addp.php"><button>Add a product</button></a>
                             <button class="btn btn-warning btn-lg">Logout</button>
                         </div>
                     </div>

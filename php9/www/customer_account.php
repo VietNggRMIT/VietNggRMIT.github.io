@@ -62,6 +62,7 @@
                                 <form action="change_pfp.php" method="POST" enctype="multipart/form-data">
                                     <input class="form-control pic-upload" type="file" id="formFile" name="newpfp"></input>
                                     <button class="btn btn-primary btn-form" type="submit" name="changepfp">Change profile picture</button>
+                                </form>
                             </div>
                             <div class="divider"></div>
                             <?php

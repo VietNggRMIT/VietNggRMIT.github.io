@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_POST["changepfp"])){
-    header("Location: welcome.php");
+    header("Location: login.php");
 }
 else{
     if(isset($_SESSION['user']['uname']) && isset($_SESSION['user']['type'])){
