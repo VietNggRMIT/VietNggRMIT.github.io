@@ -279,9 +279,6 @@ main {
                 margin-bottom: 15px;
             }
             
-            &.about {
-
-            }
         }
 
         // Product listing styling
@@ -538,10 +535,28 @@ main {
                 }
 
                 .product-options {
-                    margin-top: 30px;
+                    margin: 30px auto 30px auto;
 
                     button {
+                        display: block;
                         min-width: 250px;
+                        margin-bottom: 15px;
+                    }
+
+                }
+
+                .alert-msg {
+                    width: 300px;
+
+                    .conf-msg {
+                        opacity: 0;
+                        z-index: -1;
+                        transition: all 0.2s ease-in-out;
+    
+                        &.active {
+                            opacity: 1;
+                            z-index: 1;
+                        }
                     }
                 }
 
@@ -554,6 +569,7 @@ main {
 
                 .order-status-selection {
                     margin-top: 30px;
+
                     label {
                         font-size: 20px;
                     }
@@ -740,6 +756,7 @@ footer {
                 .product-details {
                     display: block;
                     height: auto;
+                    padding: 50px 0 0 0;
 
                     .img-section {
                         width: 80%;
@@ -754,6 +771,11 @@ footer {
                     .details-section {
                         .product-options {
                             text-align: center;
+
+                            button {
+                                display: block;
+                                margin: 0 auto 30px auto;
+                            }
                         }
                     }
                 }
@@ -799,6 +821,8 @@ footer {
             // Mobile order details styling
             .product-details {
                 .details-section {
+                    text-align: center;
+
                     .product-description {
                         min-height: auto;
                     }
@@ -914,11 +938,21 @@ footer {
                     .img-section {
                         width: 80%;
                         height: 500px;
+
+                        .img-file {
+                            display: block;
+                            margin: 0 auto;
+                        }
                     }
 
                     .details-section {
+                        margin-top: 30px;
+                        text-align: center;
+
                         .product-options {
-                            text-align: center;
+                            display: flex;
+                            justify-content: center;
+                            column-gap: 30px;
                         }
                     }
                 }

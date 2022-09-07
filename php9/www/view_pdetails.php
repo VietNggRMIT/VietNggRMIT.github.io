@@ -29,7 +29,12 @@
                 //this function accesses variable from this page only
                 var ord_key = "<?= $pid ; ?>";
                 var ord_val = "<?= $pname . "-" . $pvendor . "-" . $price; ?>";
+
+                // const for adjusting alert msg
+                const conf_msg = document.querySelector(".conf-msg");
+
                 localStorage.setItem(ord_key,ord_val);
+                conf_msg.classList.add("active");
                 document.getElementById("add_conf").innerHTML = "Item added successfully.";
             }
         </script>
@@ -78,26 +83,28 @@
         </header>
         <main>
             <div class="container">
-                <div class="product-detail-wrapper">
-                    <div class="product-details d-flex">
+                <div class="bg-wrapper">
+                    <div class="product-details">
                         <div class="img-section">
                             <img class="img-file" src="<?= $pimg; ?>">
                         </div>
                         <div class="details-section">
-                            <div class="form-title"><h1><?= $pname; ?></h1></div>
+                            <h1 class="product-title"><?= $pname; ?></h1>
+                            <h5 class="product-vendor">Vendor: <?= $pvendor; ?></h5>
                             <div class="product description">
-                                <p><?= $pvendor; ?></p>
+                                <h6>Product description: </h6>
                                 <p><?= $pdesc; ?></p>
                             </div>
                             <div class="product-price">
                                 <h2><?= $price; ?> VND</h2>
                             </div>
-                            <div class="product-options d-flex">
-                                <button class="btn btn-primary btn-lg" onclick="addtocart()">Add to cart</button>
-                                <button class="btn btn-primary btn-lg" onclick="viewcart()">View Cart</button>
-                                <button class="btn btn-primary btn-lg" onclick="clearcart()">Clear cart</button>
+                            <div class="product-options">
+                                <button class="btn btn-primary btn-warning btn-lg" onclick="addtocart()">Add to cart</button>
+                                <button class="btn btn-primary btn-warning btn-lg" onclick="viewcart()">View cart</button>
                             </div>
-                            <p id="add_conf"></p>
+                            <div class="alert-msg">
+                                <div class="alert alert-success conf-msg" id="add_conf" role="alert"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
