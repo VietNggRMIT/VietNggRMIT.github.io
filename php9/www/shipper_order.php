@@ -107,6 +107,7 @@
                                     <label>Order status:</label>
                                 </div>
                                 <form class="form-field">
+                                    <input type="hidden" name="oid" value="<?= $oid; ?>">
                                     <label>
                                         <input type="radio" id="order_active" name="order_status" value="active" checked>
                                         <i>Active</i>
@@ -120,7 +121,7 @@
                                         <i>Canceled</i>
                                     </label>
                                     <div class="form-field">
-                                        <button class="btn btn-lg btn-warning" type="submit">Update order</button>
+                                        <button class="btn btn-lg btn-warning" type="submit" name="update_ord">Update order</button>
                                     </div>
                                 </form>
                             </form>

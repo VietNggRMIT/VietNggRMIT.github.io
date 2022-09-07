@@ -105,7 +105,7 @@
                                             $i++;
                                         }
                                         //hub from session = hub in file -> match!
-                                        if($_SESSION['user']['wc'] == $ord['hub']){ 
+                                        if(($_SESSION['user']['wc'] == $ord['hub']) && ($ord['status'] == 'active')){ 
                                             //spit out items in $ord['products']
                                             $item_list = "";
                                             $ord_total = 0;

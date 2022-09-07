@@ -1,6 +1,6 @@
 <?php
     //session_start();
-    function get_pfp($uname){
+    function get_pfp($uname){ //get pfp from username
         //get user pfp
         $pfp_dir = "pfp/";
         $scan = scandir($pfp_dir);
@@ -19,7 +19,7 @@
         }
         return $my_pfp;
     }
-    function find_prod_pfp($pid){
+    function find_prod_pfp($pid){ //get picture from product id
         $pimg = "";
         //get product image, use default img if not available
         $prod_dir = "res/prod/";
@@ -39,7 +39,7 @@
         }
         return $pimg;
     }
-    function get_prod_deets($pid){
+    function get_prod_deets($pid){ //get details from product id
         $prod_fname = "../products.csv";
         $fp = fopen($prod_fname, 'r');
         $first = fgetcsv($fp);
@@ -72,7 +72,7 @@
             }
         return false;
     }
-    function get_ord_deets($oid){
+    function get_ord_deets($oid){ //get product details from order id
         $ord_fname = "../orders.csv";
         $fp = fopen($ord_fname, 'r');
         $first = fgetcsv($fp);

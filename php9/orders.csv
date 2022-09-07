@@ -1,7 +1,7 @@
 oid,products,hub,user_addr,status
-1,"1,3,4",Hub 1,124 A St.,active
-2,"3",Hub 3,123 S Street,active
-3,"2",Hub 2,123 S Street,delivered
-4,"2",Hub 1,123 S Street,active
-5,"3,5",Hub 3,123 S Street,active
-6,"2,3",Hub 1,123 S Street,cancelled
+1,"1,3,4","Hub 1","124 A St.",active
+2,3,"Hub 3","123 S Street",active
+3,2,"Hub 2","123 S Street",delivered
+4,2,"Hub 1","123 S Street",canceled
+5,"3,5","Hub 3","123 S Street",active
+6,"2,3","Hub 1","123 S Street",active
