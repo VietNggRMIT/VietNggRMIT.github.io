@@ -26,6 +26,7 @@ header {
             .navbar-brand {
                 .brand-logo {
                     height: 50px;
+                    border-radius: 50px;
                 }
             }
         }
@@ -50,6 +51,11 @@ main {
 
                 &.login {
                     width: 650px;
+
+                    .alert {
+                        width: 80%;
+                        margin: 15px auto 15px auto;
+                    }
                 }
 
                 &.customer {
@@ -510,10 +516,27 @@ main {
 
                 .img-section {
                     width: 80%;
-                    height: 350px;
+                    height: auto;
 
                     img {
-                        margin: 10px -50px;
+                        width: 100%;
+                        margin: auto;
+                    }
+
+                    .d-hub {
+                        margin-top: 1rem;
+                        font-weight: 500;
+                    }
+                }
+
+                .details-section {
+                    .product-price {
+                        font-size: 16px;
+                        font-weight: 500;
+                        margin-bottom: 15px;
+                    }
+                    .product-description {
+                        min-height: auto;
                     }
                 }
             }
@@ -573,6 +596,7 @@ main {
                     label {
                         font-size: 20px;
                     }
+                    
                     .form-field {
                         label {
                             margin-right: 30px;
@@ -834,6 +858,8 @@ footer {
                     }
                 }
                 &.order {
+                    padding-bottom: 50px;
+
                     .img-section {
                         margin-bottom: 30px;
 
@@ -937,7 +963,7 @@ footer {
 
                     .img-section {
                         width: 80%;
-                        height: 500px;
+                        height: auto;
 
                         .img-file {
                             display: block;

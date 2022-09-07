@@ -39,13 +39,13 @@
             <div class="container">
                 <div class="signup-block-wrapper">
                     <div class="signup-block login">
-                        <div class="form-title"><h1>Welcome to G29-Lazada!</h1></div>
+                        <h1 class="form-title">Welcome to G29-Lazada!</h1>
                         <?php 
                             if(isset($_SESSION['login'])){
-                                echo "<div class=\"form-title\"><h2>Wrong username or password.</h2></div>";
+                                echo "<div class=\"alert alert-warning\" role=\"alert\">Wrong username or password.</div>";
                             }
                             else{
-                                echo "<div class=\"form-title\"><h2>Please login</h2></div>";
+                                echo "<div class=\"alert alert-primary\" role=\"alert\">Please login.</div>";
                             }
                         ?>
 

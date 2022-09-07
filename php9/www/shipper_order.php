@@ -30,7 +30,7 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand me-auto" href="index.html">
+                    <a class="navbar-brand me-auto" href="home.php">
                         <img class="brand-logo" src="https://logopond.com/logos/8eaaac3a2fe79ea70f852b5c332c7efb.png" alt="Brand logo">
                     </a>
                     <button class="navbar-toggler ms-auto" type="button">
@@ -39,23 +39,31 @@
                     <div class="navbar-collapse collapse" id="collapseNavbar">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">Home</a>
+                                <a class="nav-link" href="home.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page 2</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page 3</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page 4</a>
+                                <a class="nav-link" href="#" onclick="viewcart()">Cart</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about.html">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Login</a>
+                                <?php
+                                    if(isset($_SESSION['user']['type'])){ //user has logged in
+                                        echo "<a class=\"nav-link\" href=\"" . $_SESSION['user']['type'] . "_account.php\">Account</a>";
+                                    }
+                                    else{
+                                        echo "<a class=\"nav-link\" href=\"login.php\">Login</a>";
+                                    }
+                                ?>
                             </li>
+                            <?php
+                                if(isset($_SESSION['user']['uname'])){ //only show this if user logged in
+                                    echo "<li class=\"nav-item\">";
+                                    echo "<a class=\"nav-link\" href=\"logout.php\">Log out</a>";
+                                    echo "</li>";
+                                }
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -88,12 +96,14 @@
                                             <div class="product-price">Unit price: <?= $prod['price']; ?></div>
                                                 <?php $total += $prod['price']; ?>
                                             <div class="product-description">
-                                            <h6>Description: </h6>
-                                            <p><?= $prod['description']; ?></p>
+                                                <h6>Description: </h6>
+                                                <p><?= $prod['description']; ?></p>
+                                            </div>
                                         </div>
                                     <?php }
                                 }
                                     ?>
+                            <div class="divider"></div>        
                             <div class="order-details">
                                 <div class="info-section">
                                     <div class="product-line-price">Total: <?= $total; ?> VND</div>
@@ -106,7 +116,7 @@
                                 <div class="form-label">
                                     <label>Order status:</label>
                                 </div>
-                                <form class="form-field">
+                                <div class="form-field">
                                     <input type="hidden" name="oid" value="<?= $oid; ?>">
                                     <label>
                                         <input type="radio" id="order_active" name="order_status" value="active" checked>
@@ -123,7 +133,7 @@
                                     <div class="form-field">
                                         <button class="btn btn-lg btn-warning" type="submit" name="update_ord">Update order</button>
                                     </div>
-                                </form>
+                                </div>
                             </form>
                         </div>
                     </div>

@@ -21,6 +21,7 @@ header nav {
 }
 header nav .container-fluid .navbar-brand .brand-logo {
   height: 50px;
+  border-radius: 50px;
 }
 
 main .container .signup-block-wrapper {
@@ -36,6 +37,10 @@ main .container .signup-block-wrapper .signup-block {
 }
 main .container .signup-block-wrapper .signup-block.login {
   width: 650px;
+}
+main .container .signup-block-wrapper .signup-block.login .alert {
+  width: 80%;
+  margin: 15px auto 15px auto;
 }
 main .container .signup-block-wrapper .signup-block.customer {
   width: 600px;
@@ -366,10 +371,23 @@ main .container .product-details.order {
 }
 main .container .product-details.order .img-section {
   width: 80%;
-  height: 350px;
+  height: auto;
 }
 main .container .product-details.order .img-section img {
-  margin: 10px -50px;
+  width: 100%;
+  margin: auto;
+}
+main .container .product-details.order .img-section .d-hub {
+  margin-top: 1rem;
+  font-weight: 500;
+}
+main .container .product-details.order .details-section .product-price {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+main .container .product-details.order .details-section .product-description {
+  min-height: auto;
 }
 main .container .product-details .details-section {
   margin: 5px 35px 0px 20px;
@@ -589,6 +607,9 @@ footer {
   main .container .product-details .details-section .product-options button {
     min-width: auto;
   }
+  main .container .product-details.order {
+    padding-bottom: 50px;
+  }
   main .container .product-details.order .img-section {
     margin-bottom: 30px;
   }
@@ -642,7 +663,7 @@ footer {
   }
   main .container .bg-wrapper .product-details .img-section {
     width: 80%;
-    height: 500px;
+    height: auto;
   }
   main .container .bg-wrapper .product-details .img-section .img-file {
     display: block;
