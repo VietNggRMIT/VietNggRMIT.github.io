@@ -20,35 +20,3 @@
         }
         return $pimg;
     }
-    function read_searchfilter($p_min, $p_max, $p_name) {
-        $file_name = '../products.csv';
-        $fp = fopen($file_name, 'r');
-        $first = fgetcsv($fp);
-        $products = [];
-        while ($row = fgetcsv($fp)) {
-            $i = 0;
-            $product = [];
-            foreach ($first as $col_name) {
-                $product[$col_name] =  $row[$i];
-                $i++;
-            }
-            if(isset($p_min) && is_numeric($p_min)){
-                if($product['price'] < $p_min){
-                    continue;
-                }
-            }
-            if(isset($p_max) && is_numeric($p_max)){
-                if($product['price'] > $p_max){
-                    continue;
-                }
-            }
-            if(isset($p_name) && !empty($p_name)){
-                if(strpos($product['product_name'], $p_name) === false){
-                    continue;
-                }
-            }
-            $products[] = $product;
-        }
-        // overwrite the session variable
-        $_SESSION['products'] = $products;
-    }
