@@ -71,7 +71,7 @@
                                     unset($_SESSION['pfperror']);
                                 }
                             ?>
-                            <button class="btn btn-warning btn-lg" href="logout.php">Log out</button>
+                            <a href="logout.php"><button class="btn btn-warning btn-lg" href="logout.php">Log out</button></a>
                         </div>
                     </div>
                     <div class="account-details-section">

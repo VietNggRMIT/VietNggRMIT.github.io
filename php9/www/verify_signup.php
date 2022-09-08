@@ -41,7 +41,7 @@ if (isset($_POST["signup"])){
     }
     //no dupes -> ok
     //handle profile images; force the user to do this again if they don't submit an image
-    $target_dir = "./pfp/";
+    $target_dir = "res/pfp/";
     $def_pfp = $target_dir . "default_pfp.jpg";
     //no pfp -> use default pfp
     if(!file_exists($_FILES['fileup']['tmp_name']) || !is_uploaded_file($_FILES['fileup']['tmp_name'])) {

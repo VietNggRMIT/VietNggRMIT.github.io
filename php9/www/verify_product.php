@@ -13,6 +13,9 @@ if (isset($_POST["addproduct"]) && isset($_SESSION['user']['fullname'])){
     $new_pdesc      = $_POST["pdesc"];
     $new_pid        = 1;
     $add_success = TRUE;
+    if(!$new_pdesc){
+        $new_pdesc = "(none)";
+    }
     //1. go line by line to check existing if the vendor-product combo exists
     foreach ($plist as $prod) { //$prod: a line in the csv file
         $p_details = explode(',', trim($prod));

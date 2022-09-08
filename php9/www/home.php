@@ -140,11 +140,6 @@
                                             </div>
                                             <form action="view_pdetails.php" method="GET" class="product card">
                                                 <input type="hidden" name="pid" value="<?= $pid ?>">
-                                                <input type="hidden" name="pname" value="<?= $pname ?>">
-                                                <input type="hidden" name="pvendor" value="<?= $pvendor ?>">
-                                                <input type="hidden" name="price" value="<?= $price ?>">
-                                                <input type="hidden" name="pimg" value="<?= $pimg ?>">
-                                                <input type="hidden" name="pdesc" value="<?= $pdesc ?>">
                                                 <button class="btn btn-primary" type="submit" name="view_prod">View this product</button>
                                             </form>
                                         </div>

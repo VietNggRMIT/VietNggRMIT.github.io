@@ -7,9 +7,9 @@ else{
     if(isset($_SESSION['user']['uname']) && isset($_SESSION['user']['type'])){
         if(isset($_FILES['newpfp']) && $_FILES['newpfp']['error'] == UPLOAD_ERR_OK){
             $imageType = strtolower(pathinfo($_FILES['newpfp']['name'])['extension']);
-            $pfp_dir = "pfp/";
+            $pfp_dir = "res/pfp/";
             $new_pfp_name = $pfp_dir . $_SESSION['user']['uname'] . "." . $imageType;
-            $def_pfp = "pfp/default_pfp.jpg";
+            $def_pfp = "res/pfp/default_pfp.jpg";
             if(isset($_SESSION['user']['pfp']) && $_SESSION['user']['pfp'] != $def_pfp){ //delete old pfp if exists
                 unlink($_SESSION['user']['pfp']);
             }

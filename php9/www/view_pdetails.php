@@ -1,15 +1,17 @@
 <?php 
     session_start(); 
+    include("func.php");
     if (count($_GET) <= 0 ) { 
         header("Location: home.php");
     }
     if (isset($_GET["view_prod"])){
         $pid = $_GET["pid"];
-        $pname = $_GET["pname"];
-        $pvendor = $_GET["pvendor"];
-        $price = $_GET["price"];
-        $pimg = $_GET["pimg"];
-        $pdesc = $_GET["pdesc"];
+        $pimg = find_prod_pfp($pid);
+        $prod = get_prod_deets($pid);
+        $pname = $prod['pname'];
+        $price = $prod['price'];
+        $pvendor = $prod['vendor'];
+        $pdesc = $prod['description'];
     }
     else{ //naked url -> tampering
         header("Location: home.php");

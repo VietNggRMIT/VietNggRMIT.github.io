@@ -77,7 +77,7 @@
                                 <div>Distribution hub: <?= $_SESSION['user']['wc']; ?></div>
                             </div>
                             <div class="divider"></div>
-                            <button class="btn btn-warning btn-lg">Logout</button>
+                            <a href="logout.php"><button class="btn btn-warning btn-lg">Logout</button></a>
                         </div>
                     </div>
                     <div class="account-details-section shipper">

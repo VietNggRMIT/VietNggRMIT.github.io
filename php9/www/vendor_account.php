@@ -106,35 +106,23 @@
                                         }
                                         if($product['vendor'] == $v_fname){
                                             $pimg = find_prod_pfp($product['pid']);
-                                            echo "PID: " . $product['pid'] . " -- Name: " . $product['product_name'] . "<br>";
-                                            echo "Price: " . $product['price'] . "<br>";
-                                            echo "Description: " . $product['description'] . "<br>";
-                                            echo "<img src=\"$pimg\" class=\"prod-thumnnail\" width=\"200\" height=\"200\"></img><br>";
-                                        }
+                                        ?>
+                                            <a href="javascript:view_product(<?= $product['pid']; ?>)">
+                                                <div class="product-info">
+                                                    <div class="prod-thumbnail">
+                                                        <img src="<?= $pimg; ?>" class="prod-img" alt="Product image">
+                                                    </div>
+                                                    <div class="prod-specs">
+                                                        <div class="prod-id">PID: <?= $product['pid']; ?></div>
+                                                        <div class="prod-title">Name: <?=$product['product_name']; ?> </div>
+                                                        <div class="prod-price">Price: <?= $product['price']; ?></div>
+                                                        <div class="prod-description">Description: <?= $product['description']; ?></div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        <?php }
                                     }
                                 ?>
-                                <div class="product-info">
-                                    <div class="prod-thumbnail">
-                                        <img src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg" class="prod-img" alt="Product image">
-                                    </div>
-                                    <div class="prod-specs">
-                                        <div class="prod-id">PID: </div>
-                                        <div class="prod-title">Name: </div>
-                                        <div class="prod-price">Price: </div>
-                                        <div class="prod-description">Description: </div>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <div class="prod-thumbnail">
-                                        <img src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg" class="prod-img" alt="Product image">
-                                    </div>
-                                    <div class="prod-specs">
-                                        <div class="prod-id">PID: </div>
-                                        <div class="prod-title">Name: </div>
-                                        <div class="prod-price">Price: </div>
-                                        <div class="prod-description">Description: </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

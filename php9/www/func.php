@@ -2,7 +2,7 @@
     //session_start();
     function get_pfp($uname){ //get pfp from username
         //get user pfp
-        $pfp_dir = "pfp/";
+        $pfp_dir = "res/pfp/";
         $scan = scandir($pfp_dir);
         $my_pfp = "";
         foreach($scan as $file) {
