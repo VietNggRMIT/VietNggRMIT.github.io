@@ -87,7 +87,7 @@
                                 <div>Business address: <?= $_SESSION['user']['wc']; ?></div>
                             </div>
                             <div class="divider"></div>
-                            <div>My products:</div>
+                            <div class="title">My products:</div>
                             <div class="added-products">
                                 <?php
                                     $v_fname = $_SESSION['user']['fullname']; //look for this in products.csv
@@ -107,7 +107,7 @@
                                         if($product['vendor'] == $v_fname){
                                             $pimg = find_prod_pfp($product['pid']);
                                         ?>
-                                            <a href="javascript:view_product(<?= $product['pid']; ?>)">
+                                            <a class="product-card" href="javascript:view_product(<?= $product['pid']; ?>)">
                                                 <div class="product-info">
                                                     <div class="prod-thumbnail">
                                                         <img src="<?= $pimg; ?>" class="prod-img" alt="Product image">

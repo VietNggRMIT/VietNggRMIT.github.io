@@ -59,7 +59,7 @@
                                 <div class="upload-section">
                                     <div class="form-row upload">
                                         <div class="img-preview">
-                                            <p>Default product image</p>
+                                            <p class="caption">Default product image</p>
                                             <img class="img-file" src="res/prod/default_prod.jpg" alt="Product image">
                                         </div>
                                         <div class="upload-options">
