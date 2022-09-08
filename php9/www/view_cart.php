@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include("func.php");
     $total_price = 0;
 ?>
 <!DOCTYPE html>
@@ -81,22 +82,7 @@
                                     }
                                     if(in_array($product['pid'], $pid_list)){ //found product! doing stuff
                                         $total_price += $product['price'];
-                                        //find product img, if possible
-                                        $prod_dir = "res/prod/";
-                                        $def_prod = $prod_dir . "default_prod.jpg";
-                                        $scan = scandir($prod_dir);
-                                        foreach($scan as $file) {
-                                            if ($file == "." || $file == "..") { }//do nothing - just to be safe
-                                            else{
-                                                $file_uname = explode(".", $file)[0]; //pid portion of img file
-                                                if($product['pid'] == $file_uname){
-                                                    $pimg = $prod_dir . $file;
-                                                }
-                                            }
-                                        }
-                                        if(!$pimg){
-                                            $pimg = $def_prod;
-                                        }
+                                        $pimg = find_prod_pfp($product['pid']);
                                         ?>
                                         <div class="product">
                                             <div class="product-specs">

@@ -4,17 +4,18 @@
     if(!isset($_SESSION['user']['type']) && $_SESSION['user']['type'] != 'shipper'){
         header("Location: home.php");
     }
-    if (count($_GET) <= 0 ) { 
-        header("Location: home.php");
-    }
-    if (isset($_GET["ship_ord"])){
-        $oid = $_GET['oid'];
-        $pid_list = explode(',',$_GET["pids"]);
-    }
-    else{ //naked url -> tampering
-        header("Location: home.php");
-    }
-    $total = 0;
+    else{
+        if (count($_GET) <= 0 ) { 
+            header("Location: home.php");
+        }
+        if (isset($_GET["ship_ord"])){
+            $oid = $_GET['oid'];
+            $pid_list = explode(',',$_GET["pids"]);
+        }
+        else{ //naked url -> tampering
+            header("Location: home.php");
+        }
+        $total = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,22 +49,11 @@
                                 <a class="nav-link" href="about.html">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <?php
-                                    if(isset($_SESSION['user']['type'])){ //user has logged in
-                                        echo "<a class=\"nav-link\" href=\"" . $_SESSION['user']['type'] . "_account.php\">Account</a>";
-                                    }
-                                    else{
-                                        echo "<a class=\"nav-link\" href=\"login.php\">Login</a>";
-                                    }
-                                ?>
+                                <a class="nav-link" href="shipper_account.php">Account</a>
                             </li>
-                            <?php
-                                if(isset($_SESSION['user']['uname'])){ //only show this if user logged in
-                                    echo "<li class=\"nav-item\">";
-                                    echo "<a class=\"nav-link\" href=\"logout.php\">Log out</a>";
-                                    echo "</li>";
-                                }
-                            ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="logout.php">Log out</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -168,3 +158,4 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
+<?php } ?>

@@ -1,6 +1,6 @@
 <?php
     //session_start();
-    function get_pfp($uname){ //get pfp from username
+    function get_pfp($uname){ //get pfp from username; used when logging in/signing up
         //get user pfp
         $pfp_dir = "res/pfp/";
         $scan = scandir($pfp_dir);
