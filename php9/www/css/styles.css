@@ -117,6 +117,9 @@ main .container .account-info-wrapper .profile-pic-section .img-preview img {
 main .container .account-info-wrapper .profile-pic-section .profile-options .upload-options input {
   margin-bottom: 20px;
 }
+main .container .account-info-wrapper .profile-pic-section .profile-options .alert {
+  margin-top: 15px;
+}
 main .container .account-info-wrapper .profile-pic-section .profile-options .shipper {
   margin-top: 20px;
   text-align: left;
@@ -140,6 +143,45 @@ main .container .account-info-wrapper .account-details-section.shipper .title {
 }
 main .container .account-info-wrapper .account-details-section.shipper .active-order-listing .listing-title {
   font-size: 20px;
+}
+main .container .account-info-wrapper.vendor {
+  display: block;
+}
+main .container .account-info-wrapper.vendor .profile-pic-section {
+  width: 80%;
+  margin: 0 auto 30px auto;
+}
+main .container .account-info-wrapper.vendor .profile-pic-section .img-preview img {
+  height: auto;
+  max-width: 80%;
+  max-height: 300px;
+}
+main .container .account-info-wrapper.vendor .profile-pic-section .profile-options .upload-options form input {
+  width: 60%;
+  margin: 0 auto 30px auto;
+}
+main .container .account-info-wrapper.vendor .account-details-section {
+  width: 80%;
+  margin: 0 auto;
+}
+main .container .account-info-wrapper.vendor .account-details-section .added-products {
+  font-size: 18px;
+  line-height: normal;
+}
+main .container .account-info-wrapper.vendor .account-details-section .added-products .product-info {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 10px;
+}
+main .container .account-info-wrapper.vendor .account-details-section .added-products .product-info .prod-thumbnail img {
+  width: 100%;
+  max-height: 200px;
 }
 main .container .bg-wrapper {
   background-color: #A8D0E6;
@@ -530,6 +572,29 @@ footer {
   main .container .account-info-wrapper .account-details-section .account-details {
     font-size: 18px;
     line-height: normal;
+  }
+  main .container .account-info-wrapper.vendor .profile-pic-section, main .container .account-info-wrapper.vendor .account-details-section {
+    width: 100%;
+  }
+  main .container .account-info-wrapper.vendor .profile-pic-section .img-preview img {
+    max-width: 95%;
+  }
+  main .container .account-info-wrapper.vendor .profile-options .account-options a {
+    display: block;
+  }
+  main .container .account-info-wrapper.vendor .profile-options .account-options a:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  main .container .account-info-wrapper.vendor .account-details-section .added-products .product-info {
+    display: block;
+    font-size: 16px;
+  }
+  main .container .account-info-wrapper.vendor .account-details-section .added-products .product-info .prod-thumbnail img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 200px;
+    margin: 0 auto;
   }
   main .container .bg-wrapper .product-listing .search-filter-form {
     display: block;

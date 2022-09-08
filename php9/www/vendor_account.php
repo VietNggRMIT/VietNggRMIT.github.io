@@ -52,7 +52,7 @@
         </header>
         <main>
             <div class="container">
-                <div class="account-info-wrapper">
+                <div class="account-info-wrapper vendor">
                     <div class="profile-pic-section">
                         <h2>User profile</h2>
                         <div class="img-preview">
@@ -72,41 +72,70 @@
                                 }
                             ?>
                             <div class="divider"></div>
-                            <a href="vendor_addp.php"><button>Add a product</button></a>
-                            <button class="btn btn-warning btn-lg">Logout</button>
+                            <div class="account-options">
+                                <a href="vendor_addp.php"><button class="btn btn-warning btn-lg">Add a product</button></a>
+                                <a href="logout.php"><button class="btn btn-warning btn-lg">Logout</button></a>
+                            </div>
                         </div>
                     </div>
                     <div class="account-details-section">
                         <h2>Vendor account information</h2>
                         <div class="account-details">
-                            <div>Username: <?= $_SESSION['user']['uname']; ?></div>
-                            <div>Business name: <?= $_SESSION['user']['fullname']; ?></div>
-                            <div>Business address: <?= $_SESSION['user']['wc']; ?></div>
+                            <div class="basic-info">
+                                <div>Username: <?= $_SESSION['user']['uname']; ?></div>
+                                <div>Business name: <?= $_SESSION['user']['fullname']; ?></div>
+                                <div>Business address: <?= $_SESSION['user']['wc']; ?></div>
+                            </div>
+                            <div class="divider"></div>
                             <div>My products:</div>
-                            <?php
-                                $v_fname = $_SESSION['user']['fullname']; //look for this in products.csv
-                                $file_name = '../products.csv';
-                                $fp = fopen($file_name, 'r');
-                                $first = fgetcsv($fp);
-                                while ($row = fgetcsv($fp)) {
-                                    $i = 0;
-                                    $product = [];
-                                    foreach ($first as $col_name) {
-                                        $product[$col_name] =  $row[$i];
-                                        if ($col_name == 'size') {
-                                            $product[$col_name] = explode(',', $product[$col_name]);
+                            <div class="added-products">
+                                <?php
+                                    $v_fname = $_SESSION['user']['fullname']; //look for this in products.csv
+                                    $file_name = '../products.csv';
+                                    $fp = fopen($file_name, 'r');
+                                    $first = fgetcsv($fp);
+                                    while ($row = fgetcsv($fp)) {
+                                        $i = 0;
+                                        $product = [];
+                                        foreach ($first as $col_name) {
+                                            $product[$col_name] =  $row[$i];
+                                            if ($col_name == 'size') {
+                                                $product[$col_name] = explode(',', $product[$col_name]);
+                                            }
+                                            $i++;
                                         }
-                                        $i++;
+                                        if($product['vendor'] == $v_fname){
+                                            $pimg = find_prod_pfp($product['pid']);
+                                            echo "PID: " . $product['pid'] . " -- Name: " . $product['product_name'] . "<br>";
+                                            echo "Price: " . $product['price'] . "<br>";
+                                            echo "Description: " . $product['description'] . "<br>";
+                                            echo "<img src=\"$pimg\" class=\"prod-thumnnail\" width=\"200\" height=\"200\"></img><br>";
+                                        }
                                     }
-                                    if($product['vendor'] == $v_fname){
-                                        $pimg = find_prod_pfp($product['pid']);
-                                        echo "PID: " . $product['pid'] . " -- Name: " . $product['product_name'] . "<br>";
-                                        echo "Price: " . $product['price'] . "<br>";
-                                        echo "Description: " . $product['description'] . "<br>";
-                                        echo "<img src=\"$pimg\" width=\"200\" height=\"200\"></img><br>";
-                                    }
-                                }
-                            ?>
+                                ?>
+                                <div class="product-info">
+                                    <div class="prod-thumbnail">
+                                        <img src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg" class="prod-img" alt="Product image">
+                                    </div>
+                                    <div class="prod-specs">
+                                        <div class="prod-id">PID: </div>
+                                        <div class="prod-title">Name: </div>
+                                        <div class="prod-price">Price: </div>
+                                        <div class="prod-description">Description: </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="prod-thumbnail">
+                                        <img src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg" class="prod-img" alt="Product image">
+                                    </div>
+                                    <div class="prod-specs">
+                                        <div class="prod-id">PID: </div>
+                                        <div class="prod-title">Name: </div>
+                                        <div class="prod-price">Price: </div>
+                                        <div class="prod-description">Description: </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -176,6 +176,10 @@ main {
                         }
                     }
 
+                    .alert {
+                        margin-top: 15px;
+                    }
+
                     .shipper {
                         margin-top: 20px;
                         text-align: left;
@@ -206,6 +210,62 @@ main {
                     .active-order-listing {
                         .listing-title {
                             font-size: 20px;
+                        }
+                    }
+                }
+            }
+
+            &.vendor {
+                display: block;
+                
+                .profile-pic-section {
+                    width: 80%;
+                    margin: 0 auto 30px auto;
+
+                    .img-preview {
+                        img {
+                            height: auto;
+                            max-width: 80%;
+                            max-height: 300px;
+                        }
+                    }
+
+                    .profile-options {
+                        .upload-options {
+                            form {
+                                input {
+                                    width: 60%;
+                                    margin: 0 auto 30px auto;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .account-details-section {
+                    width: 80%;
+                    margin: 0 auto;
+
+                    .added-products {
+                        font-size: 18px;
+                        line-height: normal;
+
+                        .product-info {
+                            display: grid;
+                            grid-template-columns: 30% 70%;
+                            column-gap: 15px;
+                            align-items: center;
+                            margin-bottom: 15px;
+                            background-color: #f5f5f5;
+                            border-radius: 5px;
+                            padding: 10px;
+
+                            .prod-thumbnail {
+                                img {
+                                    width: 100%;
+                                    max-height: 200px;
+                                }
+                            }
                         }
                     }
                 }
@@ -739,6 +799,51 @@ footer {
                     .account-details {
                         font-size: 18px;
                         line-height: normal;
+                    }
+                }
+
+                &.vendor {
+                    .profile-pic-section, .account-details-section {
+                        width: 100%;
+                    }
+
+                    .profile-pic-section {
+                        .img-preview {
+                            img {
+                                max-width: 95%;
+                            }
+                        }
+                    }
+
+                    .profile-options {
+                        .account-options {
+                            a {
+                                display: block;
+
+                                &:not(:last-child) {
+                                    margin-bottom: 15px;
+                                }
+                            }
+                        }
+                    }
+
+                    .account-details-section {
+                        .added-products {
+                            .product-info {
+                                display: block;
+                                font-size: 16px;
+
+                                .prod-thumbnail {
+                                    img {
+                                        display: block;
+                                        width: auto;
+                                        max-width: 100%;
+                                        max-height: 200px;
+                                        margin: 0 auto;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

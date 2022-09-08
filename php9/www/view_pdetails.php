@@ -58,12 +58,6 @@
                                 <a class="nav-link" href="#" onclick="viewcart()">Cart</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page 3</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page 4</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="about.html">About Us</a>
                             </li>
                             <li class="nav-item">
