@@ -52,7 +52,7 @@
                                 <a class="nav-link" href="shipper_account.php">Account</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="logout.php">Log out</a>
+                                <a class="nav-link" href="logout.php" onclick="clearcart()">Log out</a>
                             </li>
                         </ul>
                     </div>

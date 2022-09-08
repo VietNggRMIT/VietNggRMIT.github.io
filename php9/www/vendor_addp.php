@@ -36,7 +36,7 @@
                                 <a class="nav-link" href="about.html">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="logout.php">Log out</a>
+                                <a class="nav-link" href="logout.php" onclick="clearcart()">Log out</a>
                             </li>
                         </ul>
                     </div>

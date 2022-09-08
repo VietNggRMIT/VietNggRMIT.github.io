@@ -43,7 +43,7 @@
                                 ?>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="logout.php">Log out</a>
+                                <a class="nav-link" href="logout.php" onclick="clearcart()">Log out</a>
                             </li>
                         </ul>
                     </div>
@@ -77,7 +77,7 @@
                                 <div>Distribution hub: <?= $_SESSION['user']['wc']; ?></div>
                             </div>
                             <div class="divider"></div>
-                            <a href="logout.php"><button class="btn btn-warning btn-lg">Logout</button></a>
+                            <a href="logout.php" onclick="clearcart()"><button class="btn btn-warning btn-lg">Log out</button></a>
                         </div>
                     </div>
                     <div class="account-details-section shipper">

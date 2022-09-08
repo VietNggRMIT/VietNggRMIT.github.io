@@ -94,7 +94,7 @@ function isNum(event) {
 
 function clearcart(){
     localStorage.clear();
-    document.getElementById("cart_items").innerHTML = "";
+    //document.getElementById("cart_items").innerHTML = "";
 }
 function viewcart(){
     var addurl = "view_cart.php?pid="; //put this at the end of url later

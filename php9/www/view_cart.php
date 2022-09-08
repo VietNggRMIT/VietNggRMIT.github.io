@@ -44,6 +44,13 @@
                                     }
                                 ?>
                             </li>
+                            <li class="nav-item">
+                                <?php
+                                    if(isset($_SESSION['user']['type'])){ //user has logged in
+                                        echo "<a class=\"nav-link\" href=\"logout.php\" onclick=\"clearcart()\">Log out</a>";
+                                    }
+                                ?>
+                            </li>
                         </ul>
                     </div>
                 </div>

@@ -81,7 +81,7 @@
                                 //this needs to be separate, for styling purposes
                                 if(isset($_SESSION['user']['uname'])){ //only show this if user logged in
                                     echo "<li class=\"nav-item\">";
-                                    echo "<a class=\"nav-link\" href=\"logout.php\">Log out</a>";
+                                    echo "<a class=\"nav-link\" href=\"logout.php\" onclick=\"clearcart()\">Log out</a>";
                                     echo "</li>";
                                 }
                             ?>

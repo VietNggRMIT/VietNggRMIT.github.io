@@ -1,5 +1,5 @@
 -----type|+|username|+|c/v/sname|+|address/dist_hub|+|password----
-customer|+|aaaaaaaa|+|A1 A2|+|123 S Street|+|$2y$10$aRwTuAUBqdJMx8DxQnWvneokE2pAyqkipD0DXnch.P/kwgroY7V3y
 vendor|+|doggyeats|+|dog eats|+|Big Dog St.|+|$2y$10$Fw3w3J4duSrKP.6Xmn.0HOx1Cw5lL0dC6wkpGHPUhpRQ7MADiBjny
 vendor|+|cats1234|+|Whiskas|+|Nine L Ave.|+|$2y$10$Fw3w3J4duSrKP.6Xmn.0HOx1Cw5lL0dC6wkpGHPUhpRQ7MADiBjny
 shipper|+|ship1234|+|mr sheep|+|Hub 1|+|$2y$10$BYqRe.0p8hZXMK8pWu.Lz.oc46QE0G2jqp3JbSzjl8RCH4GZScgMy
+customer|+|aaaaaaaa|+|A1 A2|+|123 D St.|+|$2y$10$sZJbDfusRgyXuRAxkNa0ie7dFID4QPjXR5hgW957TMVn7h5YjO18G

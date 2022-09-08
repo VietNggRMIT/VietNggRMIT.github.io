@@ -42,7 +42,7 @@
                                 ?>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="logout.php">Log out</a>
+                                <a class="nav-link" href="logout.php" onclick="clearcart()">Log out</a>
                             </li>
                         </ul>
                     </div>
@@ -71,7 +71,7 @@
                                     unset($_SESSION['pfperror']);
                                 }
                             ?>
-                            <a href="logout.php"><button class="btn btn-warning btn-lg" href="logout.php">Log out</button></a>
+                            <a href="logout.php"><button class="btn btn-warning btn-lg" href="logout.php" onclick="clearcart()">Log out</button></a>
                         </div>
                     </div>
                     <div class="account-details-section">
