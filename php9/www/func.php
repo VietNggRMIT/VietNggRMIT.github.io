@@ -40,7 +40,7 @@
         return $pimg;
     }
     function get_prod_deets($pid){ //get details from product id
-        $prod_fname = "../products.csv";
+        $prod_fname = "../db/products.csv";
         $fp = fopen($prod_fname, 'r');
         $first = fgetcsv($fp);
         $p_deets = [];
@@ -63,7 +63,7 @@
         else { return false; }
     }
     function get_hub_adr($hub){
-        $fname = "../dhubs.csv";
+        $fname = "../db/dhubs.csv";
         $hub_list = file ($fname);
         foreach ($hub_list as $hub_line) {
             $hub_data = explode('|+|',$hub_line);
@@ -73,7 +73,7 @@
         return false;
     }
     function get_ord_deets($oid){ //get product details from order id
-        $ord_fname = "../orders.csv";
+        $ord_fname = "../db/orders.csv";
         $fp = fopen($ord_fname, 'r');
         $first = fgetcsv($fp);
         $o_deets = [];

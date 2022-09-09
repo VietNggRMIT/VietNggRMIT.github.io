@@ -3,14 +3,14 @@ session_start();
 include("func.php");
 //trying to access this page without submitting
 if(count($_POST) <= 0 ) { 
-    header("Location: home.php");
+    header("Location: index.php");
   }
 if (isset($_POST["update_ord"])){
     $oid = $_POST['oid'];
     $status = $_POST['order_status'];
     $changing = true;
     //read all content into array
-    $ord_fname = "../orders.csv";
+    $ord_fname = "../db/orders.csv";
     $fp = fopen($ord_fname, 'r');
     $first = fgetcsv($fp);
     $data = [];

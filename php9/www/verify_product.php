@@ -6,7 +6,7 @@ if (count($_POST) <= 0 ) {
     header("Location: login.php");
 }
 if (isset($_POST["addproduct"]) && isset($_SESSION['user']['fullname'])){
-    $plist = file ('../products.csv'); //read the file into an array of lines
+    $plist = file ('../db/products.csv'); //read the file into an array of lines
     //get all the data from POST
     $new_pname      = $_POST["pname"];
     $new_price      = $_POST["price"];
@@ -32,7 +32,7 @@ if (isset($_POST["addproduct"]) && isset($_SESSION['user']['fullname'])){
     //no dupes -> ok
     //2. Get the product a new pid
     $prod_list = $_GET['pid'];
-    $file_name = '../products.csv';
+    $file_name = '../db/products.csv';
     $fp = fopen($file_name, 'r');
     $first = fgetcsv($fp);
     while ($row = fgetcsv($fp)) { 
@@ -76,12 +76,12 @@ if (isset($_POST["addproduct"]) && isset($_SESSION['user']['fullname'])){
             } else {
                 echo "Sorry, there was an error uploading your file. Default pfp used.";
                 $new_prod_pfp = $def_pfp;
-                //header( "Refresh:5; url=home.php", true, 303);
+                //header( "Refresh:5; url=index.php", true, 303);
             }
         }
     }
     if($add_success){    
-        $pw_file = fopen("../products.csv", "a");
+        $pw_file = fopen("../db/products.csv", "a");
         $entry = sprintf("%s,%s,%s,%s,\"%s\"\n", $new_pid, $new_pname, 
                                     $_SESSION['user']['fullname'], $new_price, $new_pdesc);
         fwrite($pw_file, $entry);

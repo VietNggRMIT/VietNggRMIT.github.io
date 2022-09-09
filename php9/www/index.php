@@ -3,7 +3,7 @@
     session_start(); 
     //putting this function on another page -> no items shown?
     function read_searchfilter() {
-        $file_name = '../products.csv';
+        $file_name = '../db/products.csv';
         $fp = fopen($file_name, 'r');
         $first = fgetcsv($fp);
         $products = [];
@@ -50,7 +50,7 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand me-auto" href="home.php">
+                    <a class="navbar-brand me-auto" href="index.php">
                         <img class="brand-logo" src="https://logopond.com/logos/8eaaac3a2fe79ea70f852b5c332c7efb.png" alt="Brand logo">
                     </a>
                     <button class="navbar-toggler ms-auto" type="button">
@@ -59,7 +59,7 @@
                     <div class="navbar-collapse collapse" id="collapseNavbar">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="home.php">Home</a>
+                                <a class="nav-link" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" onclick="viewcart()">Cart</a>
@@ -106,7 +106,7 @@
                                 <input class="form-control" type="search" placeholder="Search...">
                                 <button class="btn btn-warning btn-lg">Search</button>
                             </form> -->
-                            <form class="search-filter-form" method="post" action="home.php">
+                            <form class="search-filter-form" method="post" action="index.php">
                                 <!-- Search by name <input type="text" name="product_name"> -->
                                 <div class="search-input">
                                     <input class="form-control" type="search" placeholder="Search..." name="product_name">

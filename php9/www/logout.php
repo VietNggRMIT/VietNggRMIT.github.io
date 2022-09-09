@@ -4,9 +4,9 @@
         unset($_SESSION['login']);
     }
     if(!isset($_SESSION['user']['uname'])){ //users wander here
-        header("Location: home.php");
+        header("Location: index.php");
     }
     else{
         $_SESSION['user'] = array();
-        header("Location: home.php");
+        header("Location: index.php");
     }

@@ -12,7 +12,7 @@
                 //Get a "random" hub from 1, 2, or 3. More random numbers include noises, after all.
                 $hub = "Hub " . (date("s") % 3 + 1); 
                 //read orders.csv row by row, increment new_oid if it is met
-                $file_name = '../orders.csv';
+                $file_name = '../db/orders.csv';
                 $fp = fopen($file_name, 'r');
                 $first = fgetcsv($fp);
                 while ($row = fgetcsv($fp)) { 
@@ -32,10 +32,10 @@
                 fwrite($ord_f, $output);
                 fclose($ord_f);
                 $_SESSION['ord_msg'] = "Your order will be delivered to $user_adr soon!";
-                header("Location: home.php");
+                header("Location: index.php");
             }
             else{
-                header("Location: home.php");
+                header("Location: index.php");
             }
         }
         else{ //users havent logged in; redirect on view_cart.php failed?
@@ -43,6 +43,6 @@
         }
     }
     else {
-        header("Location: home.php");
+        header("Location: index.php");
     }
 ?>

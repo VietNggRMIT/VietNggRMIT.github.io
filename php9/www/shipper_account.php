@@ -2,7 +2,7 @@
     session_start();
     include("func.php");
     if(!isset($_SESSION['user']['type']) || !isset($_SESSION['user']['wc'])){ //non-login people got here
-        header("Location: home.php");
+        header("Location: index.php");
     }
     else{ //caught at the end of the doc
 ?>
@@ -20,7 +20,7 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand me-auto" href="home.php">
+                    <a class="navbar-brand me-auto" href="index.php">
                         <img class="brand-logo" src="https://logopond.com/logos/8eaaac3a2fe79ea70f852b5c332c7efb.png" alt="brand-logo" height="50px">
                     </a>
                     <button class="navbar-toggler ms-auto" type="button">
@@ -29,7 +29,7 @@
                     <div class="navbar-collapse collapse" id="collapseNavbar">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="home.php">Home</a>
+                                <a class="nav-link" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" onclick="viewcart()">Cart</a>
@@ -91,7 +91,7 @@
                             </div>
                             <div class="active-orders">
                                 <?php
-                                    $ord_fname = "../orders.csv";
+                                    $ord_fname = "../db/orders.csv";
                                     $fp = fopen($ord_fname, 'r');
                                     $first = fgetcsv($fp);
                                     //technically those would have the same amount of elements

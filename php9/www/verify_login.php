@@ -8,7 +8,7 @@ if(count($_POST) <= 0 ) {
 if (isset($_POST["login"])){
     $userN = $_POST['uname'];
     $passW = $_POST['psw'];
-    $userlist = file ('../accounts.db');
+    $userlist = file ('../db/accounts.db');
     $success = false;
     foreach ($userlist as $user) { //user: a line in the db file
         $user_details = explode('|+|', trim($user)); //trim so that the new line doesnt get counted as pw

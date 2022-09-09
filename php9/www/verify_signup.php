@@ -6,7 +6,7 @@ if (count($_POST) <= 0 ) {
     header("Location: login.php");
 }
 if (isset($_POST["signup"])){
-    $userlist = file ('../accounts.db'); //read the file into an array of lines
+    $userlist = file ('../db/accounts.db'); //read the file into an array of lines
     //get all the data from POST bc why not
     $new_uname      = $_POST["uname"];
     $new_utype      = $_POST["utype"];
@@ -75,12 +75,12 @@ if (isset($_POST["signup"])){
             } else {
                 echo "Sorry, there was an error uploading your file. Default pfp used.";
                 $_SESSION['user']['pfp'] = $def_pfp;
-                //header( "Refresh:5; url=home.php", true, 303);
+                //header( "Refresh:5; url=index.php", true, 303);
             }
         }
     }
     if($reg_success){    
-        $pw_file = fopen("../accounts.db", "a");
+        $pw_file = fopen("../db/accounts.db", "a");
         $pw_hash = password_hash($new_pw, PASSWORD_DEFAULT);
         $entry = sprintf("%s|+|%s|+|%s|+|%s|+|%s\n", $new_utype, $new_uname, $new_fullname, $new_wc, $pw_hash);
         fwrite($pw_file, $entry);

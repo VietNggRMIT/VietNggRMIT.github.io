@@ -20,7 +20,7 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand me-auto" href="home.php">
+                    <a class="navbar-brand me-auto" href="index.php">
                         <img class="brand-logo" src="https://logopond.com/logos/8eaaac3a2fe79ea70f852b5c332c7efb.png" alt="Brand logo">
                     </a>
                     <button class="navbar-toggler ms-auto" type="button">
@@ -29,7 +29,7 @@
                     <div class="navbar-collapse collapse" id="collapseNavbar">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="home.php">Home</a>
+                                <a class="nav-link" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about.html">About Us</a>
@@ -91,7 +91,7 @@
                             <input type="hidden" name="utype" value="customer">
                             <div class="form-row upload">
                                 <div class="img-preview">
-                                    <img class="img-file" src="http://thichthucung.com/wp-content/uploads/cho-phoc-soc-lai-husky.jpg" alt="Profile picture">
+                                    <img class="img-file" src="res/pfp/default_pfp.jpg" alt="Profile picture">
                                 </div>
                                 <div class="upload-options">
                                     <input class="form-control pic-upload" type="file" id="formFile" name="fileup">

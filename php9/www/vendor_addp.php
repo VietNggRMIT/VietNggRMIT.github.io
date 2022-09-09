@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(!isset($_SESSION['user']['type']) && $_SESSION['user']['type'] != 'vendor'){
-        header("Location: home.php");
+        header("Location: index.php");
     }
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand me-auto" href="home.php">
+                    <a class="navbar-brand me-auto" href="index.php">
                         <img class="brand-logo" src="https://logopond.com/logos/8eaaac3a2fe79ea70f852b5c332c7efb.png" alt="Brand logo">
                     </a>
                     <button class="navbar-toggler ms-auto" type="button">
@@ -27,7 +27,7 @@
                     <div class="navbar-collapse collapse" id="collapseNavbar">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="home.php">Home</a>
+                                <a class="nav-link" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="vendor_account">Account</a>

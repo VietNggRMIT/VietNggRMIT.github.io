@@ -2,7 +2,7 @@
     session_start(); 
     include("func.php");
     if (count($_GET) <= 0 ) { 
-        header("Location: home.php");
+        header("Location: index.php");
     }
     if (isset($_GET["view_prod"])){
         $pid = $_GET["pid"];
@@ -14,7 +14,7 @@
         $pdesc = $prod['description'];
     }
     else{ //naked url -> tampering
-        header("Location: home.php");
+        header("Location: index.php");
     }
 ?>
 <!DOCTYPE html>
@@ -45,7 +45,7 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand me-auto" href="home.php">
+                    <a class="navbar-brand me-auto" href="index.php">
                         <img class="brand-logo" src="https://logopond.com/logos/8eaaac3a2fe79ea70f852b5c332c7efb.png" alt="brand-logo" height="50px">
                     </a>
                     <button class="navbar-toggler ms-auto" type="button">
@@ -54,7 +54,7 @@
                     <div class="navbar-collapse collapse" id="collapseNavbar">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="home.php">Home</a>
+                                <a class="nav-link" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" onclick="viewcart()">Cart</a>
