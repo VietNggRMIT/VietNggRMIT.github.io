@@ -12,7 +12,7 @@ for (let i = 0; i < collapseBtn.length; i++) {
 function verifySignupForm() {
     let username = document.querySelector('#username').value;
     let psw = document.querySelector('#password').value;
-    let uregex = new RegExp("^[a-zA-Z0-9]{8,15}$")
+    let uregex = new RegExp("^[a-zA-Z0-9]{8,15}$");
 
     // Username length
     if (!uregex.test(username)) {
