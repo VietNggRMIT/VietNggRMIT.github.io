@@ -53,8 +53,9 @@
                                 unset($_SESSION['signup_failed']);
                               }
                         ?>
+                        <div class="alert alert-danger inactive" id="check_username"></div>
                         <div class="alert alert-danger inactive" id="check_psw"></div>
-                        <form onsubmit="return verifyPassword();" action="verify_signup.php" method="POST" enctype="multipart/form-data">
+                        <form onsubmit="return verifySignupForm();" action="verify_signup.php" method="POST" enctype="multipart/form-data">
                             <div class="form-row">
                                 <div class="form-label">
                                     <label for="username">Username</label>
@@ -103,7 +104,7 @@
                                 <p>By clicking "Sign up" you agree to the <a href="privacy.html">Terms and Privacy Policy</a></p>
                             </div>
                             <div class="form-row">
-                                <p>Already have an account? <a href="login.html">Login</a></p>
+                                <p>Already have an account? <a href="login.php">Login</a></p>
                             </div>
                         </form>
 

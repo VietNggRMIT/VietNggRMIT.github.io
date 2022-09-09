@@ -54,7 +54,7 @@
                                 unset($_SESSION['signup_failed']);
                             }
                         ?>
-                        <form onsubmit="return verifyPassword();" action="verify_signup.php" method="POST" enctype="multipart/form-data">
+                        <form onsubmit="return verifySignupForm();" action="verify_signup.php" method="POST" enctype="multipart/form-data">
                             <div class="form-flex">
                                 <div class="fields-section">
                                     <div class="form-row">

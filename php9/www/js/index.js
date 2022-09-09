@@ -8,20 +8,29 @@ for (let i = 0; i < collapseBtn.length; i++) {
     })
 }
 
-// Username input validation
-
-// Password input validation
-function verifyPassword() {
+// Username and password input validation
+function verifySignupForm() {
+    let username = document.querySelector('#username').value;
     let psw = document.querySelector('#password').value;
+    let uregex = new RegExp("^[a-zA-Z0-9]{8,15}$")
 
-    // Length
+    // Username length
+    if (!uregex.test(username)) {
+        document.querySelector('#check_username').innerHTML = 'Username length between 8 to 15 required and only numbers/digits allowed';
+        document.querySelector('#check_username').classList.remove('inactive');
+        return false;
+    } else {
+        document.querySelector('#check_username').classList.add('inactive');
+    }
+
+    // Psw length
     if (psw.length < 8 || psw.length > 20) {
         document.querySelector('#check_psw').innerHTML = 'Password between 8 to 20 characters required';
         document.querySelector('#check_psw').classList.remove('inactive');
         return false;
     }
 
-    // Lowercase
+    // Psw lowercase
     let lowerCase = 'abcdefghijklmnopqrstuvwxyz';
     let found = false;
     for (let i = 0; i < psw.length; i++) {
@@ -39,7 +48,7 @@ function verifyPassword() {
         return false;
     }
 
-    // Uppercase
+    // Psw uppercase
     let upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     found = false;
     for (let i = 0; i < psw.length; i++) {
@@ -57,7 +66,7 @@ function verifyPassword() {
         return false;
     }
 
-    // Digit
+    // Psw digit
     let digit = '0123456789';
     found = false;
     for (let i = 0; i < psw.length; i++) {
@@ -75,7 +84,7 @@ function verifyPassword() {
         return false;
     }
 
-    // Special characters
+    // Psw special characters
     let specialChar = '!@#$%^&*';
     found = false;
     for (let i = 0; i < psw.length; i++) {
