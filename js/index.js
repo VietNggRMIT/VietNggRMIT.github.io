@@ -15,17 +15,17 @@ for (let i = 0; i < collapseBtn.length; i++) {
 
 // Password input validation
 function verifyPassword() {
-    let pws = document.querySelector('#password').value;
+    let psw = document.querySelector('#password').value;
 
     // Length
-    if (pws.length < 8 || pws.length > 20) {
+    if (psw.length < 8 || psw.length > 20) {
         return false;
     }
 
     // Lowercase
     let lowerCase = 'abcdefghijklmnopqrstuvwxyz';
     let found = false;
-    for (let i = 0; i < pws.length; i++) {
+    for (let i = 0; i < psw.length; i++) {
         let temp = pass.charAt(i);
         if (lowerCase.includes(temp)) {
             found = true;
@@ -41,8 +41,8 @@ function verifyPassword() {
     // Uppercase
     let upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     found = false;
-    for (let i = 0; i < pws.length; i++) {
-        let temp = pws.charAt(i);
+    for (let i = 0; i < psw.length; i++) {
+        let temp = psw.charAt(i);
         if (upperCase.includes(temp)) {
             found = true;
             break;
@@ -56,8 +56,8 @@ function verifyPassword() {
     // Digit
     let digit = '0123456789';
     found = false;
-    for (let i = 0; i < pws.length; i++) {
-        let temp = pws.charAt(i);
+    for (let i = 0; i < psw.length; i++) {
+        let temp = psw.charAt(i);
         if (digit.includes(temp)) {
             found = true;
             break;
@@ -71,8 +71,8 @@ function verifyPassword() {
     // Special characters
     let specialChar = '!@#$%^&*';
     found = false;
-    for (let i = 0; i < pws.length; i++) {
-        let temp = pws.charAt(i);
+    for (let i = 0; i < psw.length; i++) {
+        let temp = psw.charAt(i);
         if (specialChar.includes(temp)) {
             found = true;
             break;

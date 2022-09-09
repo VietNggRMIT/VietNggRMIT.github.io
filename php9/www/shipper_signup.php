@@ -50,10 +50,11 @@
                         <div class="form-title"><h1>Shipper sign up</h1></div>
                         <?php 
                             if(isset($_SESSION['signup_failed'])){
-                                echo "<h2>Your username is taken.</h2>";
+                                echo '<div class="alert alert-danger">Your username is taken.</div>';
+                                unset($_SESSION['signup_failed']);
                             }
                         ?>
-                        <form action="verify_signup.php" method="POST" enctype="multipart/form-data">
+                        <form onsubmit="return verifyPassword();" action="verify_signup.php" method="POST" enctype="multipart/form-data">
                             <div class="form-flex">
                                 <div class="fields-section">
                                     <div class="form-row">

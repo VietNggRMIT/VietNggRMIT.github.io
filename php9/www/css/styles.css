@@ -35,6 +35,13 @@ main .container .signup-block-wrapper .signup-block {
   border-radius: 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+main .container .signup-block-wrapper .signup-block .alert-danger.inactive {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+}
 main .container .signup-block-wrapper .signup-block.login {
   width: 650px;
 }
@@ -258,6 +265,11 @@ main .container .text-content .text-title {
 }
 main .container .product-listing {
   padding: 50px 0 50px 0;
+}
+main .container .product-listing .alert-success {
+  width: 70%;
+  margin: 0 auto 30px auto;
+  text-align: center;
 }
 main .container .product-listing .listing-title {
   text-align: center;

@@ -94,12 +94,12 @@
             <div class="container">
                 <div class="bg-wrapper">
                     <div class="product-listing">
-                        <p><?php
+                        <div><?php
                             if (isset($_SESSION['ord_msg'])){
-                                echo $_SESSION['ord_msg'];
+                                echo "<div class=\"alert alert-success\">" . $_SESSION['ord_msg'] ."</div>";
                                 unset($_SESSION['ord_msg']);
                             }
-                        ?></p>
+                        ?></div>
                         <div class="listing-title"><h1>New products</h1></div>
                         <div class="search-filter-section">
                             <!-- <form class="search-input">

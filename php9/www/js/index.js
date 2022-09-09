@@ -12,73 +12,96 @@ for (let i = 0; i < collapseBtn.length; i++) {
 
 // Password input validation
 function verifyPassword() {
-    let pws = document.querySelector('#password').value;
+    let psw = document.querySelector('#password').value;
 
     // Length
-    if (pws.length < 8 || pws.length > 20) {
+    if (psw.length < 8 || psw.length > 20) {
+        document.querySelector('#check_psw').innerHTML = 'Password between 8 to 20 characters required';
+        document.querySelector('#check_psw').classList.remove('inactive');
         return false;
     }
 
     // Lowercase
     let lowerCase = 'abcdefghijklmnopqrstuvwxyz';
     let found = false;
-    for (let i = 0; i < pws.length; i++) {
-        let temp = pass.charAt(i);
+    for (let i = 0; i < psw.length; i++) {
+        let temp = psw.charAt(i);
         if (lowerCase.includes(temp)) {
             found = true;
-            console.log(found);
+            document.querySelector('#check_psw').classList.add('inactive');
             break;
         }
     }
 
     if (!found) {
+        document.querySelector('#check_psw').innerHTML = 'Password needs at least 1 lowercase';
+        document.querySelector('#check_psw').classList.remove('inactive');
         return false;
     }
 
     // Uppercase
     let upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     found = false;
-    for (let i = 0; i < pws.length; i++) {
-        let temp = pws.charAt(i);
+    for (let i = 0; i < psw.length; i++) {
+        let temp = psw.charAt(i);
         if (upperCase.includes(temp)) {
             found = true;
+            document.querySelector('#check_psw').classList.add('inactive');
             break;
         }
     }
 
     if (!found) {
+        document.querySelector('#check_psw').innerHTML = 'Password needs at least 1 uppercase';
+        document.querySelector('#check_psw').classList.remove('inactive');
         return false;
     }
 
     // Digit
     let digit = '0123456789';
     found = false;
-    for (let i = 0; i < pws.length; i++) {
-        let temp = pws.charAt(i);
+    for (let i = 0; i < psw.length; i++) {
+        let temp = psw.charAt(i);
         if (digit.includes(temp)) {
             found = true;
+            document.querySelector('#check_psw').classList.add('inactive');
             break;
         }
     }
 
     if (!found) {
+        document.querySelector('#check_psw').innerHTML = 'Password needs at least 1 digit';
+        document.querySelector('#check_psw').classList.remove('inactive');
         return false;
     }
 
     // Special characters
     let specialChar = '!@#$%^&*';
     found = false;
-    for (let i = 0; i < pws.length; i++) {
-        let temp = pws.charAt(i);
+    for (let i = 0; i < psw.length; i++) {
+        let temp = psw.charAt(i);
         if (specialChar.includes(temp)) {
             found = true;
+            document.querySelector('#check_psw').classList.add('inactive');
             break;
         }
     }
 
     if (!found) {
+        document.querySelector('#check_psw').innerHTML = 'Password needs at least 1 special character';
+        document.querySelector('#check_psw').classList.remove('inactive');
         return false;
     }
+
+    if (psw.includes(' ')) {
+        document.querySelector('#check_psw').innerHTML = 'Password cannot contain space';
+        document.querySelector('#check_psw').classList.remove('inactive');
+        return false;
+      }
+
+      else {
+        return true;
+      }
 }
 
 // Number input validation

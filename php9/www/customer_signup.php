@@ -49,11 +49,12 @@
                         <div class="form-title"><h1>Customer sign up</h1></div>
                         <?php
                             if(isset($_SESSION['signup_failed'])){
-                                echo "<h2>Your username is taken.</h2>";
+                                echo '<div class="alert alert-danger">Your username is taken.</div>';
+                                unset($_SESSION['signup_failed']);
                               }
                         ?>
-
-                        <form action="verify_signup.php" method="POST" enctype="multipart/form-data">
+                        <div class="alert alert-danger inactive" id="check_psw"></div>
+                        <form onsubmit="return verifyPassword();" action="verify_signup.php" method="POST" enctype="multipart/form-data">
                             <div class="form-row">
                                 <div class="form-label">
                                     <label for="username">Username</label>
@@ -96,7 +97,7 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <button class="btn btn-lg btn-warning" name="signup" type="submit" value="Submit" onclick="verifyPassword()">Sign up</button>
+                                <button class="btn btn-lg btn-warning" name="signup" type="submit" value="Submit">Sign up</button>
                             </div>
                             <div class="form-row">
                                 <p>By clicking "Sign up" you agree to the <a href="privacy.html">Terms and Privacy Policy</a></p>
