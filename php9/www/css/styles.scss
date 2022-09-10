@@ -24,9 +24,13 @@ header {
         background-color: #24305E;
         .container-fluid {
             .navbar-brand {
+                display: flex;
+                align-items: center;
+
                 .brand-logo {
                     height: 50px;
                     border-radius: 50px;
+                    margin-right: 15px;
                 }
             }
         }
@@ -794,6 +798,24 @@ footer {
 @media only screen and (max-width: 768px) {
 
     // Mobile header styling
+    header {
+        nav {
+            .container-fluid {
+                .navbar-brand {
+                    display: block;
+    
+                    .brand-logo {
+                        margin: 0 0 5px 0;
+                    }
+
+                    .web-title {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
     .navbar-collapse {
         transition: all 0.3s ease-in-out;
 

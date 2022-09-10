@@ -19,6 +19,7 @@
                 <div class="container-fluid">
                     <a class="navbar-brand me-auto" href="index.php">
                         <img class="brand-logo" src="https://logopond.com/logos/8eaaac3a2fe79ea70f852b5c332c7efb.png" alt="Brand logo">
+                        <div class="web-title">G29-Lazada</div>
                     </a>
                     <button class="navbar-toggler ms-auto" type="button">
                         <span class="navbar-toggler-icon"></span>
