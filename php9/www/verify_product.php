@@ -81,11 +81,14 @@ if (isset($_POST["addproduct"]) && isset($_SESSION['user']['fullname'])){
     }
     if($add_success){    
         $pw_file = fopen("../db/products.csv", "a");
-        $entry = sprintf("%s,%s,%s,%s,\"%s\"\n", $new_pid, $new_pname, 
+        $entry = sprintf("%s,\"%s\",%s,%s,\"%s\"\n", $new_pid, $new_pname, 
                                     $_SESSION['user']['fullname'], $new_price, $new_pdesc);
         fwrite($pw_file, $entry);
         fclose($pw_file);
         unset($_SESSION['addp_failed']);
         header("Location: vendor_account.php");
     }
+}
+else{
+    header("Location: home.php");
 }
