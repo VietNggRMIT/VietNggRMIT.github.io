@@ -83,7 +83,7 @@
                 <div class="bg-wrapper">
                     <div class="product-details">
                         <div class="img-section">
-                            <img class="img-file" src="<?= $pimg; ?>">
+                            <img class="img-file" src="<?= $pimg; ?>" alt="product-img">
                         </div>
                         <div class="details-section">
                             <h1 class="product-title"><?= $pname; ?></h1>

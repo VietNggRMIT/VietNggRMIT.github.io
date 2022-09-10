@@ -118,7 +118,7 @@
                         <div class="divider"></div>
                         <div class="total-sum">
                             <div class="total-price">
-                                <label for="cart-total"><b>Total</b></label>
+                                <label><b>Total</b></label>
                                 <div class="total-value" id="cart-total"><?= $total_price; ?> VND</div>
                             </div>
                         </div>

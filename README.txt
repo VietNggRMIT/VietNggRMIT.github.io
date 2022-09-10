@@ -33,4 +33,4 @@ Testing accounts information:
     username: ship1234
     password: Ship123!
 
-Project demonstration video link: 
+Project demonstration video link: https://youtu.be/PTsHUbmuEqM

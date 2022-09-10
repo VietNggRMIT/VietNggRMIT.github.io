@@ -56,12 +56,12 @@
                     <div class="profile-pic-section">
                         <h2>User profile</h2>
                         <div class="img-preview">
-                            <img class="img-file" <?= "src=\"" . $_SESSION['user']['pfp'] . "\""; ?>>
+                            <img class="img-file" <?= "src=\"" . $_SESSION['user']['pfp'] . "\""; ?> alt="profile picture">
                         </div>
                         <div class="profile-options">
                             <div class="upload-options">
                                 <form action="change_pfp.php" method="POST" enctype="multipart/form-data">
-                                    <input class="form-control pic-upload" type="file" id="formFile" name="newpfp"></input>
+                                    <input class="form-control pic-upload" type="file" id="formFile" name="newpfp">
                                     <button class="btn btn-primary btn-form" type="submit" name="changepfp">Change profile picture</button>
                                 </form>
                             </div>
@@ -72,7 +72,7 @@
                                     unset($_SESSION['pfperror']);
                                 }
                             ?>
-                            <a href="logout.php"><button class="btn btn-warning btn-lg" href="logout.php" onclick="clearcart()">Log out</button></a>
+                            <a class="btn btn-warning btn-lg" href="logout.php" onclick="clearcart()">Log out</a>
                         </div>
                     </div>
                     <div class="account-details-section">
