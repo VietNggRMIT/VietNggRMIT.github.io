@@ -31,7 +31,7 @@
                                 <a class="nav-link" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="vendor_account">Account</a>
+                                <a class="nav-link" href="vendor_account.php">Account</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about.html">About Us</a>
