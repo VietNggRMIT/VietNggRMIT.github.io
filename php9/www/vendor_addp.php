@@ -90,7 +90,7 @@
                                             <label for="pdesc">Product description (advised)</label>
                                         </div>
                                         <div class="form-field">
-                                            <textarea class="form-control"  type="textarea" id="pdesc" name="pdesc" maxlength="500" rows="8" placeholder="Product description"></textarea>
+                                            <textarea class="form-control" id="pdesc" name="pdesc" maxlength="500" rows="8" placeholder="Product description"></textarea>
                                         </div>
                                     </div>
                                 </div>
