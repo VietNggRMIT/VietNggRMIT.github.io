@@ -31,7 +31,6 @@ if (isset($_POST["addproduct"]) && isset($_SESSION['user']['fullname'])){
     }
     //no dupes -> ok
     //2. Get the product a new pid
-    $prod_list = $_GET['pid'];
     $file_name = '../db/products.csv';
     $fp = fopen($file_name, 'r');
     $first = fgetcsv($fp);
@@ -60,7 +59,7 @@ if (isset($_POST["addproduct"]) && isset($_SESSION['user']['fullname'])){
         $imageFileType = strtolower(pathinfo($target_file)['extension']);
         $err_mes = "";
         // Disallow files that are too big
-        if ($_FILES["fileup"]["size"] > 5000000) {
+        if ($_FILES["prod_pfp"]["size"] > 5000000) {
             $err_mes = "Sorry, your file is too large.";
             $uploaded = FALSE;
         }

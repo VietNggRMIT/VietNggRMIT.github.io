@@ -95,7 +95,7 @@
                                 </div>
                             </div>
                             <div class="form-row confirm">
-                                <button class="btn btn-lg btn-warning" name="addproduct">Add product</button>
+                                <button class="btn btn-lg btn-warning" name="addproduct" type="submit">Add product</button>
                             </div>
                         </form>
 
