@@ -74,7 +74,7 @@
                                             <label for="pname">Product name</label>
                                         </div>
                                         <div class="form-field">
-                                            <input class="form-control" required type="text" id="pname" name="pname" minlength="5" maxlength="20" placeholder="Product name">
+                                            <input class="form-control" required type="text" id="pname" name="pname" minlength="10" maxlength="20" placeholder="Product name">
                                         </div>
                                     </div>
                                     <div class="form-row">
